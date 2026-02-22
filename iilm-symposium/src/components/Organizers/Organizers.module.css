@@ -139,6 +139,7 @@
 /* Subheading */
 .subHeading {
   font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 700;
   color: var(--accent-red);
   text-align: center;
@@ -256,6 +257,7 @@
 
 .role {
   font-size: 1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 600;
   color: var(--accent-red);
   margin-bottom: 0.25rem;
@@ -263,12 +265,14 @@
 
 .institution {
   font-size: 0.95rem;
+  font-family: cursive;
   color: var(--text-light);
 }
 
 /* Student card specifics */
 .course {
   font-size: 0.95rem;
+  font-family: 'Courier New', Courier, monospace;
   font-weight: 500;
   color: var(--text-light);
   margin-bottom: 0.25rem;

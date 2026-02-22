@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Organizers.module.css";
+import rudrakshImg from "../../assets/rudraksh.jpg";
 
 const Organizers = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -59,7 +60,7 @@ const Organizers = () => {
       name: "Rudraksh",
       course: "B.Tech Second Year",
       role: "Student Coordinator",
-      image: "https://randomuser.me/api/portraits/men/36.jpg",
+      image: rudrakshImg,
     },
   ];
 
