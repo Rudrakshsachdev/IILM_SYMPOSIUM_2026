@@ -92,14 +92,14 @@
 .linksSection a::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -4px; /* Adjusted to be just below the text */
   left: 0;
   width: 0;
-  height: 6px;
-  background: #fff;
+  height: 2px; /* Thinner line for better look */
+  background: var(--accent-red, #c41e3a); /* Use accent color for consistency */
   border-radius: 3px;
-  margin: 0 0 2.5rem 0;
   box-shadow: 0 2px 12px rgba(255, 255, 255, 0.18);
+  transition: width 0.3s ease;
 }
 .linksSection a:hover::after {
   width: 100%;
@@ -116,11 +116,10 @@
 
 /* Divider */
 .divider {
-  height: 4px;
-  background: #fff;
-  border-radius: 2px;
-  margin: 2.5rem 0 2rem 0;
-  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.18);
+  height: 1px; /* Thinner divider */
+  background: rgba(255, 255, 255, 0.1); /* Subtle divider */
+  width: 100%;
+  margin: 2rem 0 2rem 0;
 }
 
 /* Bottom Section */
@@ -140,17 +139,50 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1.5rem 2rem 1.5rem;
+  }
+
   .topSection {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2.5rem;
     width: 100%;
     align-items: center;
+    text-align: center;
   }
+
+  .brandSection {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .brandSection p {
+    text-align: center;
+  }
+
+  .linksSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .linksSection ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .bottomSection {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     text-align: center;
+    align-items: center;
     width: 100%;
-    margin-top: 0.5rem;
   }
 }
