@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./Hero.module.css";
+import HeroBg from "../../assets/hero.jpg";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -66,107 +67,16 @@ const Hero = () => {
 
   return (
     <section className={styles.hero} id="home" ref={heroRef}>
-      {/* Mosaic Background (V4 - Optimized) */}
-      <div className={styles.mosaicContainer}>
-        <div className={`${styles.column} ${styles.column1} `}>
-          <img
-            src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3"
-            alt="Campus 1"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1523580494863-6f3031224c94"
-            alt="Campus 2"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3"
-            alt="Campus 1"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1523580494863-6f3031224c94"
-            alt="Campus 2"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-        </div>
-        <div className={`${styles.column} ${styles.column2} `}>
-          <img
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-            alt="Innovation 1"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1507413245164-6160d8298b31"
-            alt="Innovation 2"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-            alt="Innovation 1"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1507413245164-6160d8298b31"
-            alt="Innovation 2"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-        </div>
-        <div className={`${styles.column} ${styles.column3} `}>
-          <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c"
-            alt="Campus 3"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
-            alt="Collaboration"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c"
-            alt="Campus 3"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
-            alt="Collaboration"
-            className={styles.mosaicImg}
-            loading="lazy"
-          />
-        </div>
-      </div>
-
+      <div
+        className={styles.heroBg}
+        style={{ backgroundImage: `url(${HeroBg})` }}
+      />
       <div className={styles.overlay}></div>
-      <div className={styles.gridOverlay}></div>
-      <div className={styles.scanLine}></div>
-      <div className={styles.lightBeam}></div>
-
-      <div className={styles.blobContainer}>
-        <div className={`${styles.blob} ${styles.blob1} `}></div>
-        <div className={`${styles.blob} ${styles.blob2} `}></div>
-        <div className={`${styles.blob} ${styles.blob3} `}></div>
-      </div>
-
-      <div className={styles.particleOverlay}></div>
-
       <div className={styles.heroContent}>
         <p className={styles.collaboration}>
           Organized by <strong>IILM University, India</strong> <br />
           In Collaboration with <strong>Global Partner University</strong>
         </p>
-
         <div className={styles.titleWrapper}>
           <h1 className={styles.title}>
             International Symposium on <br />
@@ -176,12 +86,10 @@ const Hero = () => {
             2026
           </h1>
         </div>
-
         <p className={styles.tagline}>
           Advancing Knowledge, Innovation & Sustainable Futures through <br />{" "}
           Collaborative Excellence.
         </p>
-
         <div className={styles.eventDetails}>
           <div className={styles.detailItem}>
             <span className={styles.icon}>📍</span>
@@ -192,7 +100,6 @@ const Hero = () => {
             <span>29th April 2026</span>
           </div>
         </div>
-
         <div className={styles.buttonGroup}>
           <a href="#registration" className={styles.primaryBtn}>
             <span>Register Now</span>
@@ -220,7 +127,6 @@ const Hero = () => {
           </a>
         </div>
       </div>
-
       <div className={styles.bottomFade}></div>
     </section>
   );
