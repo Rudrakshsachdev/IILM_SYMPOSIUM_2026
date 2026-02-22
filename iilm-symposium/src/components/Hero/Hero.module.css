@@ -43,7 +43,8 @@
   height: 100%;
   background: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1")
     center/cover no-repeat;
-  animation: kenBurns 60s ease-in-out infinite alternate;
+  /* animation: kenBurns 60s ease-in-out infinite alternate; */
+  /* Remove Ken Burns animation for performance */
   z-index: 0;
   opacity: 0.35;
   will-change: transform;
@@ -91,13 +92,13 @@
 }
 
 .column1 {
-  animation: driftUp 50s linear infinite;
+  /* animation: driftUp 50s linear infinite; */
 }
 .column2 {
-  animation: driftDown 55s linear infinite;
+  /* animation: driftDown 55s linear infinite; */
 }
 .column3 {
-  animation: driftUp 45s linear infinite;
+  /* animation: driftUp 45s linear infinite; */
 }
 
 /* Premium Glass Frames for Images */
@@ -161,7 +162,7 @@
   filter: blur(150px);
   opacity: 0.3;
   mix-blend-mode: screen;
-  animation: floatBlobs 30s infinite alternate ease-in-out;
+  /* animation: floatBlobs 30s infinite alternate ease-in-out; */
   will-change: transform;
 }
 
@@ -241,7 +242,7 @@
     transparent
   );
   z-index: 4;
-  animation: scan 12s linear infinite;
+  /* animation: scan 12s linear infinite; */
   pointer-events: none;
   will-change: top;
 }
@@ -270,7 +271,7 @@
   );
   z-index: 5;
   transform: rotate(-45deg);
-  animation: beamSweep 18s ease-in-out infinite;
+  /* animation: beamSweep 18s ease-in-out infinite; */
   pointer-events: none;
   will-change: transform, opacity;
 }
@@ -346,8 +347,8 @@
 .tagline,
 .eventDetails,
 .buttonGroup {
-  opacity: 0;
-  animation: revealUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  opacity: 1;
+  /* animation: revealUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards; */
 }
 
 @keyframes revealUp {

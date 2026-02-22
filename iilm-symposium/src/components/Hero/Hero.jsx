@@ -6,6 +6,8 @@ const Hero = () => {
 
   // Optimized parallax & mouse interaction for zero-lag
   useEffect(() => {
+    // Only enable parallax and mousemove on desktop
+    const isMobile = window.innerWidth < 768;
     let rafScroll = null;
     let rafMouse = null;
     let lastScrollY = 0;
@@ -48,11 +50,15 @@ const Hero = () => {
     };
 
     window.addEventListener("scroll", scrollHandler, { passive: true });
-    window.addEventListener("mousemove", mouseHandler, { passive: true });
+    if (!isMobile) {
+      window.addEventListener("mousemove", mouseHandler, { passive: true });
+    }
 
     return () => {
       window.removeEventListener("scroll", scrollHandler);
-      window.removeEventListener("mousemove", mouseHandler);
+      if (!isMobile) {
+        window.removeEventListener("mousemove", mouseHandler);
+      }
       if (rafScroll) cancelAnimationFrame(rafScroll);
       if (rafMouse) cancelAnimationFrame(rafMouse);
     };

@@ -21,7 +21,8 @@ const About = () => {
       observer.observe(sectionRef.current);
     }
 
-    // High-performance mouse parallax (consistent with Hero)
+    // Only enable mouse parallax on desktop
+    const isMobile = window.innerWidth < 768;
     let rafMouse = null;
     let lastX = 0;
     let lastY = 0;
@@ -42,12 +43,16 @@ const About = () => {
         rafMouse = null;
       });
     };
-    window.addEventListener("mousemove", mouseHandler, { passive: true });
+    if (!isMobile) {
+      window.addEventListener("mousemove", mouseHandler, { passive: true });
+    }
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
-      window.removeEventListener("mousemove", mouseHandler);
+      if (!isMobile) {
+        window.removeEventListener("mousemove", mouseHandler);
+      }
       if (rafMouse) cancelAnimationFrame(rafMouse);
     };
   }, []);
