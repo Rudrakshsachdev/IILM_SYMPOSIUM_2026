@@ -1,0 +1,384 @@
+/* ===== VARIABLES ===== */
+:root {
+  --primary-dark: #0b1e3c;
+  --accent-red: #8b1e2d;
+  --white: #ffffff;
+  --slate-900: #020617;
+  --slate-800: #1e293b;
+  --slate-400: #94a3b8;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --transition-kinetic: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  --axis-mouse-x: 0;
+  --axis-mouse-y: 0;
+}
+
+/* ===== ADVANCED TIMELINE SECTION ===== */
+.timelineSection {
+  position: relative;
+  background-color: var(--slate-900); /* Dark technical core */
+  padding: 12rem 2rem;
+  overflow: hidden;
+  color: var(--white);
+  contain: paint;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 20;
+}
+
+/* ===== CINEMATIC TECH BACKGROUND ===== */
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  opacity: 0.06;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Cfilter id='n'%3%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3%3C/filter%3%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3%3C/svg%3");
+}
+
+.dataGrid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.movingFlares {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.flare1, .flare2 {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(139, 30, 45, 0.08) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.flare1 { top: -20%; left: -10%; animation: drift 20s infinite alternate; }
+.flare2 { bottom: -20%; right: -10%; animation: drift 25s infinite alternate-reverse; }
+
+@keyframes drift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(100px, 100px) scale(1.2); }
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.eyebrow {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: var(--accent-red);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-kinetic);
+}
+
+.title {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition-kinetic) 0.1s;
+}
+
+.eyebrow.animate, .title.animate { opacity: 1; transform: translateY(0); }
+
+.accentText {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--white);
+}
+
+.headerDivider {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+/* ===== 3D KINETIC AXIS ===== */
+.kineticAxis {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  perspective: 2500px;
+  padding: 4rem 0;
+}
+
+/* Central Digital Beam */
+.centralBeam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(-50%);
+  z-index: 10;
+  
+  /* Magnetic Warping Effect */
+  transform: translateX(calc(-50% + var(--axis-mouse-x) * 15px)) perspective(1000px) rotateY(calc(var(--axis-mouse-x) * 5deg));
+  transition: transform 0.4s ease-out;
+}
+
+.beamInner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, transparent, var(--accent-red), var(--accent-red), transparent);
+  box-shadow: 0 0 15px var(--accent-red);
+}
+
+.beamGlow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100px;
+  background: linear-gradient(to bottom, transparent, rgba(139, 30, 45, 0.1), transparent);
+  transform: translateX(-50%);
+  filter: blur(20px);
+}
+
+/* Timeline Nodes */
+.timelineNode {
+  position: relative;
+  width: 100%;
+  margin-bottom: 12rem;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateZ(-200px);
+  transition: var(--transition-kinetic);
+  transform-style: preserve-3d;
+}
+
+.timelineNode.animate {
+  opacity: 1;
+  transform: translateZ(0);
+}
+
+.timelineNode:nth-child(1).animate { transition-delay: 0.2s; }
+.timelineNode:nth-child(2).animate { transition-delay: 0.3s; }
+.timelineNode:nth-child(3).animate { transition-delay: 0.4s; }
+.timelineNode:nth-child(4).animate { transition-delay: 0.5s; }
+.timelineNode:nth-child(5).animate { transition-delay: 0.6s; }
+
+/* Left/Right Staggering */
+.left { justify-content: flex-start; }
+.right { justify-content: flex-end; }
+
+/* HUD Reticle Markers */
+.reticle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, -50%) translateZ(40px);
+  z-index: 20;
+}
+
+.reticleCircle {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--accent-red);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--accent-red);
+  animation: pulseRotate 4s linear infinite;
+}
+
+.reticleScanner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 2px;
+  background: var(--accent-red);
+  transform: translate(-50%, -50%);
+  animation: scanRot 2s ease-in-out infinite;
+}
+
+@keyframes pulseRotate {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+  100% { transform: scale(1) rotate(360deg); opacity: 0.5; }
+}
+
+@keyframes scanRot {
+  0%, 100% { transform: translate(-50%, -50%) rotate(0deg) scaleX(0.5); }
+  50% { transform: translate(-50%, -50%) rotate(180deg) scaleX(1); }
+}
+
+/* Card Wrapper & 3D Physics */
+.cardWrapper {
+  width: 44%;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+.card3D {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(25px);
+  border: 1px solid var(--glass-border);
+  border-radius: 40px;
+  padding: 4rem 3.5rem;
+  transition: var(--transition-kinetic);
+  transform-style: preserve-3d;
+  
+  /* Magnetic Lean Toward Mouse */
+  transform: rotateX(calc(var(--axis-mouse-y) * -4deg)) 
+             rotateY(calc(var(--axis-mouse-x) * 6deg));
+}
+
+.card3D:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale3d(1.05, 1.05, 1.05) translateZ(80px) 
+             rotateX(calc(var(--axis-mouse-y) * -12deg)) 
+             rotateY(calc(var(--axis-mouse-x) * 15deg));
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+}
+
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at calc(50% + var(--axis-mouse-x) * 50%), calc(50% + var(--axis-mouse-y) * 50%), rgba(139, 30, 45, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card3D:hover .cardGlow { opacity: 1; }
+
+/* Parallax Content Layers */
+.layer1 { transform: translateZ(20px); position: relative; }
+.layer2 { transform: translateZ(60px); margin-top: 1rem; }
+.layer3 { transform: translateZ(100px); position: absolute; bottom: 2rem; right: 2rem; }
+
+.hudSerial {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--slate-400);
+  letter-spacing: 0.3em;
+  margin-bottom: 1.5rem;
+}
+
+.hudBrackets {
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--accent-red);
+  border-right: 0;
+  border-bottom: 0;
+  opacity: 0.3;
+}
+
+.dateBadge {
+  display: inline-block;
+  background: var(--accent-red);
+  color: var(--white);
+  padding: 0.6rem 1.4rem;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 20px rgba(139, 30, 45, 0.3);
+}
+
+.itemTitle {
+  font-size: 2.2rem;
+  font-weight: 950;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.itemDesc {
+  font-size: 1.1rem;
+  color: var(--slate-400);
+  line-height: 1.6;
+}
+
+.dataPoint {
+  width: 10px;
+  height: 10px;
+  background: var(--accent-red);
+  box-shadow: 0 0 15px var(--accent-red);
+  border-radius: 50%;
+}
+
+.scannedLine {
+  position: absolute;
+  bottom: 0;
+  left: -200%;
+  width: 500%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: scanLine 5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanLine {
+  0% { transform: translateY(-300px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100px); opacity: 0; }
+}
+
+/* ===== TECH MARKERS ===== */
+.techMarkers {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.3em;
+  pointer-events: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991px) {
+  .card3D { padding: 3rem 2.5rem; }
+  .itemTitle { font-size: 1.8rem; }
+  .kineticAxis { max-width: 800px; }
+}
+
+@media (max-width: 768px) {
+  .centralBeam { left: 30px; transform: none !important; }
+  .reticle { left: 30px; transform: translate(-50%, -50%); }
+  .cardWrapper { width: calc(100% - 80px); margin-left: 80px; }
+  .timelineNode { margin-bottom: 6rem; justify-content: flex-start !important; }
+  .card3D { transform: none !important; backdrop-filter: none; background: #111; border-color: #222; }
+  .title { font-size: 3rem; }
+  .timelineSection { padding: 8rem 1.5rem; }
+}
