@@ -171,7 +171,7 @@
   }
 }
 
-/* Cinematic grid overlay and flares */
+/* Cinematic grid overlay */
 .venueSection::before {
   content: "";
   position: absolute;
@@ -186,19 +186,21 @@
   opacity: 0.35;
   filter: drop-shadow(0 0 32px #a82335) brightness(1.2);
   animation: gridGlowVenue 2.5s ease-in-out infinite;
+}
 
-  @keyframes gridGlowVenue {
-    0%,
-    100% {
-      opacity: 0.95;
-      filter: drop-shadow(0 0 32px #a82335) brightness(1.2);
-    }
-    50% {
-      opacity: 1;
-      filter: drop-shadow(0 0 64px #ff2d3a) brightness(1.4);
-    }
+/* Keyframes moved outside (FIX) */
+@keyframes gridGlowVenue {
+  0%,
+  100% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 32px #a82335) brightness(1.2);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 64px #ff2d3a) brightness(1.4);
   }
 }
+
 .venueSection::after {
   content: "";
   position: absolute;
@@ -216,6 +218,7 @@
   z-index: 0;
   animation: venueFlare 18s infinite alternate;
 }
+
 @keyframes venueFlare {
   0% {
     transform: translate(0, 0) scale(1);
