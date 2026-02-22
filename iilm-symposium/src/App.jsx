@@ -7,6 +7,7 @@ import Speakers from "./components/Speakers/Speakers";
 import Organizers from "./components/Organizers/Organizers";
 import CallForPapers from "./components/CallForPapers/CallForPapers";
 import Registrations from "./components/Registrations/Registrations";
+import VenueContact from "./components/VenueContact/VenueContact";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Organizers />
       <CallForPapers />
       <Registrations />
+      <VenueContact />
     </>
   );
 }
