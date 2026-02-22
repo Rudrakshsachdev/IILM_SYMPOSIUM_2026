@@ -49,7 +49,7 @@ const Footer = () => {
             © 2026 IILM University. All Rights Reserved.
           </p>
           <p>
-            Designed & Developed by Organizing Committee
+            Designed & Developed by Rudraksh
           </p>
         </div>
 
