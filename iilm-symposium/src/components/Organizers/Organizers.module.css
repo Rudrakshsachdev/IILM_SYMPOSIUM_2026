@@ -27,7 +27,11 @@
   left: 2%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(139, 30, 45, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(139, 30, 45, 0.1) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
   filter: blur(40px);
   animation: float 20s ease-in-out infinite;
@@ -40,7 +44,11 @@
   right: 5%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(11, 30, 60, 0.08) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(11, 30, 60, 0.08) 0%,
+    transparent 70%
+  );
   border-radius: 60% 40% 50% 50% / 40% 50% 60% 50%;
   filter: blur(50px);
   animation: floatReverse 25s ease-in-out infinite;
@@ -53,7 +61,10 @@
   right: 15%;
   width: 200px;
   height: 200px;
-  background-image: radial-gradient(rgba(139, 30, 45, 0.15) 2px, transparent 2px);
+  background-image: radial-gradient(
+    rgba(139, 30, 45, 0.15) 2px,
+    transparent 2px
+  );
   background-size: 30px 30px;
   opacity: 0.3;
   animation: rotate 30s linear infinite;
@@ -61,18 +72,32 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(30px, -20px) scale(1.05); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
 }
 
 @keyframes floatReverse {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-40px, 30px) scale(0.95); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-40px, 30px) scale(0.95);
+  }
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Subtle grid lines overlay */
@@ -82,18 +107,53 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    linear-gradient(to right, rgba(11, 30, 60, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(11, 30, 60, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
   pointer-events: none;
-  z-index: 2;
-  animation: gridMove 30s linear infinite;
+  z-index: 1;
 }
 
-@keyframes gridMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
+.gridOverlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(to right, rgba(11, 30, 60, 0.18) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(11, 30, 60, 0.18) 2px, transparent 2px);
+  background-size: 40px 40px;
+  opacity: 0.7;
+  filter: blur(0px);
+  animation: gridGlowStrong 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes gridGlowStrong {
+  0%,
+  100% {
+    opacity: 0.7;
+    filter: blur(0px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(3.5px);
+  }
+}
+
+/* removed gridMove animation, replaced by gridGlow */
+
+/* Animated dark grid background */
+/* removed .bgGrid, use .gridOverlay for animated dark grid */
+@keyframes gridGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(11, 30, 60, 0.18));
+    opacity: 0.7;
+  }
+  50% {
+    filter: drop-shadow(0 0 32px rgba(11, 30, 60, 0.32));
+    opacity: 1;
+  }
 }
 
 .container {
@@ -113,7 +173,9 @@
   letter-spacing: -0.02em;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
   position: relative;
   display: inline-block;
   width: 100%;
@@ -139,14 +201,16 @@
 /* Subheading */
 .subHeading {
   font-size: clamp(1.5rem, 3vw, 2rem);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: 700;
   color: var(--accent-red);
   text-align: center;
   margin: 3rem 0 2rem;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .subHeading.animate {
@@ -177,7 +241,11 @@
   overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
@@ -257,7 +325,9 @@
 
 .role {
   font-size: 1rem;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
   font-weight: 600;
   color: var(--accent-red);
   margin-bottom: 0.25rem;
@@ -272,7 +342,7 @@
 /* Student card specifics */
 .course {
   font-size: 0.95rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: 500;
   color: var(--text-light);
   margin-bottom: 0.25rem;
@@ -290,7 +360,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 50% 0%, rgba(139, 30, 45, 0.1), transparent 70%);
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(139, 30, 45, 0.1),
+    transparent 70%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -298,7 +372,11 @@
 }
 
 .studentCard .cardGlow {
-  background: radial-gradient(circle at 50% 0%, rgba(11, 30, 60, 0.1), transparent 70%);
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(11, 30, 60, 0.1),
+    transparent 70%
+  );
 }
 
 .card:hover .cardGlow {
@@ -310,11 +388,18 @@
   position: relative;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent-red), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-red),
+    transparent
+  );
   margin: 4rem auto;
   opacity: 0;
   transform: scaleX(0.8);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .divider.animate {
@@ -336,7 +421,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
