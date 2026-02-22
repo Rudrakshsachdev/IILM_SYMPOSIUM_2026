@@ -64,39 +64,59 @@
 }
 
 .logoLink:hover {
-  transform: scale(1.05);
+  transform: scale(1.08); /* Slightly more pronounced */
+  filter: brightness(1.2);
 }
 
 .logo {
-  height: 42px; /* Slightly smaller logo */
+  height: 42px;
   width: auto;
   object-fit: contain;
+  transition: var(--transition);
 }
 
 .separator {
   width: 1px;
-  height: 24px; /* Reduced height to match text better */
-  background-color: rgba(255, 255, 255, 0.25); /* Slightly brighter */
-  margin: 0; /* Rely on flex gap for consistent spacing */
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.25);
+  margin: 0;
+  transition: height 0.4s ease;
+}
+
+.logoWrapper:hover .separator {
+  height: 28px;
+  background-color: var(--accent-red);
 }
 
 .symposiumTitle {
   color: var(--white);
   font-family: var(--font-title);
-  font-size: 1.15rem; /* Slightly smaller and more elegant */
+  font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   margin: 0;
   line-height: 1.1;
   text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.logoWrapper:hover .symposiumTitle {
+  color: #f0f0f0;
 }
 
 .year {
   color: var(--accent-red);
   font-weight: 800;
-  margin-left: 0.5rem; /* Slightly more space for emphasis */
+  margin-left: 0.5rem;
   position: relative;
-  letter-spacing: 0.05em; /* Added for premium look */
+  letter-spacing: 0.05em;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.logoWrapper:hover .year {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(196, 30, 58, 0.4);
 }
 
 /* ===== DESKTOP NAVIGATION ===== */
@@ -116,29 +136,30 @@
   position: relative;
   color: var(--text-gray);
   text-decoration: none;
-  font-size: 0.95rem; /* Slightly smaller */
+  font-size: 0.95rem;
   font-weight: 500;
   padding: 0.5rem 0;
-  transition: color 0.3s ease;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  display: inline-block;
 }
 
-/* Animated underline (centered) */
+/* Animated underline (draws from left) */
 .navLink::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 0;
   height: 2px;
   background-color: var(--accent-red);
-  transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .navLink:hover {
-  color: var(--accent-red);
+  color: var(--white);
+  transform: translateY(-2px); /* Subtle lift */
 }
 
 .navLink:hover::after {
