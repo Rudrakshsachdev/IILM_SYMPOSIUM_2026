@@ -4,6 +4,7 @@ import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import ImportantDates from "./components/ImportantDates/ImportantDates";
 import Speakers from "./components/Speakers/Speakers";
+import Organizers from "./components/Organizers/Organizers";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <About />
       <ImportantDates />
       <Speakers />
+      <Organizers />
     </>
   );
 }
