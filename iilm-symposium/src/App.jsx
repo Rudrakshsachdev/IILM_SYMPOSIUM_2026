@@ -6,6 +6,7 @@ import ImportantDates from "./components/ImportantDates/ImportantDates";
 import Speakers from "./components/Speakers/Speakers";
 import Organizers from "./components/Organizers/Organizers";
 import CallForPapers from "./components/CallForPapers/CallForPapers";
+import Registrations from "./components/Registrations/Registrations";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Speakers />
       <Organizers />
       <CallForPapers />
+      <Registrations />
     </>
   );
 }
