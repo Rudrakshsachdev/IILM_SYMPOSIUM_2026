@@ -159,15 +159,18 @@
 
 @media (max-width: 768px) {
   .mapWrapper {
-    height: 220px;
+    height: 280px; /* Slightly taller for better map view */
     border-radius: 12px;
   }
   .overlayCard {
-    position: static;
-    margin: 12px auto;
+    position: relative; /* Change to relative to prevent absolute overlap */
+    margin: 20px auto 0;
     max-width: 100%;
-    border-radius: 12px;
-    padding: 12px;
+    border-radius: 16px;
+    padding: 24px;
+    bottom: auto;
+    left: auto;
+    text-align: center; /* Center text on mobile */
   }
 }
 
@@ -178,14 +181,21 @@
   inset: 0;
   z-index: 0;
   background-image:
-    linear-gradient(rgba(139, 30, 45, 1) 4px, transparent 4px),
-    linear-gradient(90deg, rgba(139, 30, 45, 1) 4px, transparent 4px);
-  background-size: 48px 48px;
-  mask-image: none;
+    linear-gradient(rgba(139, 30, 45, 1) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(139, 30, 45, 1) 2px, transparent 2px);
+  background-size: 60px 60px; /* Larger grid for desktop */
+  mask-image: radial-gradient(circle, black 40%, transparent 90%); /* Fade edges */
   pointer-events: none;
-  opacity: 0.35;
-  filter: drop-shadow(0 0 32px #a82335) brightness(1.2);
-  animation: gridGlowVenue 2.5s ease-in-out infinite;
+  opacity: 0.25; /* More subtle opacity */
+  filter: drop-shadow(0 0 15px #a82335) brightness(1.2);
+  animation: gridGlowVenue 3s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .venueSection::before {
+    background-size: 100px 100px; /* Even larger grid for mobile to reduce density */
+    opacity: 0.15;
+  }
 }
 
 /* Keyframes moved outside (FIX) */
