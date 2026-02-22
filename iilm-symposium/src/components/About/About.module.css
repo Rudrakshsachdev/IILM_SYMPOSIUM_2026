@@ -16,14 +16,6 @@
 
 /* ===== ABOUT SECTION ===== */
 .about {
-  }
-
-  @media (max-width: 600px) {
-    .about {
-      margin-top: 4.5rem;
-      padding-top: 6rem;
-    }
-  }
   position: relative;
   background-color: var(--light-bg);
   padding: 12rem 2rem;
@@ -31,6 +23,14 @@
   --about-mouse-x: 0;
   --about-mouse-y: 0;
 }
+
+@media (max-width: 600px) {
+  .about {
+    margin-top: 4.5rem;
+    padding-top: 6rem;
+  }
+}
+
 
 .container {
   max-width: 1300px;
