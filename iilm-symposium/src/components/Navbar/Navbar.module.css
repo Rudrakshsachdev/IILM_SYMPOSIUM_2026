@@ -1,0 +1,304 @@
+:global(*) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:global(body) {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --primary-dark: #0b1e3c;
+  --accent-red: #c41e3a; /* Slightly more vibrant red */
+  --white: #ffffff;
+  --text-gray: #e0e0e0;
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-main: 'Inter', sans-serif;
+  --font-title: 'Montserrat', sans-serif;
+}
+
+/* ===== NAVBAR BASE ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: var(--primary-dark);
+  padding: 0.75rem 2rem; /* Reduced from 1rem */
+  transition: var(--transition);
+  will-change: transform, background-color, box-shadow;
+  font-family: var(--font-main);
+}
+
+.navbar.scrolled {
+  background-color: rgba(11, 30, 60, 0.95);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  padding: 0.5rem 2rem; /* Reduced from 0.75rem */
+  box-shadow: var(--shadow-md);
+}
+
+/* Container for max-width alignment */
+.navbarContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===== LOGO SECTION ===== */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Reduced from 1rem for tighter grouping */
+}
+
+.logoLink {
+  display: inline-flex;
+  transition: var(--transition);
+}
+
+.logoLink:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  height: 42px; /* Slightly smaller logo */
+  width: auto;
+  object-fit: contain;
+}
+
+.separator {
+  width: 1px;
+  height: 24px; /* Reduced height to match text better */
+  background-color: rgba(255, 255, 255, 0.25); /* Slightly brighter */
+  margin: 0; /* Rely on flex gap for consistent spacing */
+}
+
+.symposiumTitle {
+  color: var(--white);
+  font-family: var(--font-title);
+  font-size: 1.15rem; /* Slightly smaller and more elegant */
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.year {
+  color: var(--accent-red);
+  font-weight: 800;
+  margin-left: 0.5rem; /* Slightly more space for emphasis */
+  position: relative;
+  letter-spacing: 0.05em; /* Added for premium look */
+}
+
+/* ===== DESKTOP NAVIGATION ===== */
+.desktopNav {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 2rem; /* Reduced for better balance */
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  position: relative;
+  color: var(--text-gray);
+  text-decoration: none;
+  font-size: 0.95rem; /* Slightly smaller */
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Animated underline (centered) */
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-red);
+  transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.navLink:hover {
+  color: var(--accent-red);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* ===== HAMBURGER (mobile) ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 1.5px; /* Thinner for sleeker look */
+  background-color: var(--white);
+  border-radius: 4px;
+  transition: var(--transition);
+  transform-origin: left;
+}
+
+.hamburger.open span:first-child {
+  transform: rotate(45deg) translate(2px, -2px);
+  width: 110%;
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hamburger.open span:last-child {
+  transform: rotate(-45deg) translate(2px, 2px);
+  width: 110%;
+}
+
+/* ===== MOBILE MENU (slide-in) ===== */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(320px, 80vw);
+  height: 100vh;
+  background-color: var(--primary-dark);
+  z-index: 1050;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 6rem 2rem 2rem;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  font-family: var(--font-main);
+}
+
+.mobileMenu.open {
+  transform: translateX(0);
+}
+
+.mobileNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobileNavLink {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.1rem; /* Slightly smaller and more elegant */
+  font-weight: 500;
+  padding: 0.75rem 0;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mobileNavLink:hover {
+  color: var(--accent-red);
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+@media (max-width: 1024px) {
+  .navList {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 1rem;
+  }
+  .navbar.scrolled {
+    padding: 0.75rem 1rem;
+  }
+  .desktopNav {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 40px;
+  }
+  .symposiumTitle {
+    font-size: 1rem;
+  }
+  .year {
+    font-size: 1rem;
+  }
+  .mobileMenu {
+    width: 85vw;
+    padding: 5rem 1.5rem 1.5rem;
+  }
+  .mobileNavLink {
+    font-size: 1.125rem;
+  }
+}
+
+/* Focus styles for accessibility */
+.navLink:focus-visible,
+.mobileNavLink:focus-visible,
+.hamburger:focus-visible {
+  outline: 2px solid var(--accent-red);
+  outline-offset: 4px;
+}
