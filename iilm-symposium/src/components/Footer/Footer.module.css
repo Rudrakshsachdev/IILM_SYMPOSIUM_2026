@@ -1,0 +1,156 @@
+.footer {
+  background-color: var(--primary-dark, #0b1e3c);
+  color: var(--text-gray, #e0e0e0);
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  font-family: var(--font-main, "Inter", sans-serif);
+  box-shadow: var(--shadow-md, 0 8px 30px rgba(0, 0, 0, 0.12));
+  letter-spacing: 0.02em;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top Section */
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* Brand */
+.brandSection {
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: var(--transition, all 0.3s cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+.brandSection p {
+  font-size: 1rem;
+  color: var(--text-gray, #e0e0e0);
+  line-height: 1.6;
+  font-family: var(--font-title, "Montserrat", sans-serif);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Links */
+.linksSection h4,
+.contactSection h4 {
+  color: var(--accent-red, #c41e3a);
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+  font-family: var(--font-title, "Montserrat", sans-serif);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.linksSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linksSection li {
+  margin-bottom: 0.5rem;
+}
+
+.linksSection a {
+  text-decoration: none;
+  color: var(--text-gray, #e0e0e0);
+  font-size: 0.95rem;
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  transition:
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s ease;
+}
+
+.linksSection a:hover {
+  color: var(--accent-red, #c41e3a);
+  transform: translateY(-2px);
+}
+.linksSection a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 6px;
+  background: #fff;
+  border-radius: 3px;
+  margin: 0 0 2.5rem 0;
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.18);
+}
+.linksSection a:hover::after {
+  width: 100%;
+}
+
+/* Contact */
+.contactSection p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-gray, #e0e0e0);
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-weight: 500;
+}
+
+/* Divider */
+.divider {
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+  margin: 2.5rem 0 2rem 0;
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.18);
+}
+
+/* Bottom Section */
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: var(--text-gray, #e0e0e0);
+  font-family: var(--font-main, "Inter", sans-serif);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .topSection {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    align-items: center;
+  }
+  .bottomSection {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
