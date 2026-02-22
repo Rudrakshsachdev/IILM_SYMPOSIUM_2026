@@ -44,7 +44,8 @@ const About = () => {
       });
     };
     if (!isMobile) {
-      window.addEventListener("mousemove", mouseHandler, { passive: true });
+      const options = { passive: true };
+      window.addEventListener("mousemove", mouseHandler, options);
     }
     return () => {
       if (sectionRef.current) {
@@ -71,16 +72,38 @@ const About = () => {
         ))}
       </div>
 
-      {/* Maroon Rain Effect */}
-      <div className={styles.rainContainer}>
-        {[...Array(15)].map((_, i) => (
+      {/* Advanced Rain Effect: Multi-layered for 3D depth */}
+      <div className={styles.rainContainerBackground}>
+        {[...Array(12)].map((_, i) => (
           <div
-            key={i}
+            key={`bg-${i}`}
             className={styles.rainDrop}
             style={{
-              left: `${(i * 7) % 100}%`,
-              animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${0.5 + Math.random() * 0.5}s`,
+              left: `${(i * 9) % 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${1.5 + Math.random() * 1.5}s`,
+              "--drop-h": `${40 + Math.random() * 40}px`,
+              "--drop-opacity": `${0.1 + Math.random() * 0.15}`,
+              "--drop-blur": "4px",
+              "--drop-speed-multiplier": "0.7",
+            }}
+          ></div>
+        ))}
+      </div>
+
+      <div className={styles.rainContainerForeground}>
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={`fg-${i}`}
+            className={styles.rainDrop}
+            style={{
+              left: `${(i * 13) % 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${0.6 + Math.random() * 0.6}s`,
+              "--drop-h": `${80 + Math.random() * 60}px`,
+              "--drop-opacity": `${0.3 + Math.random() * 0.3}`,
+              "--drop-blur": "0px",
+              "--drop-speed-multiplier": "1.2",
             }}
           ></div>
         ))}
