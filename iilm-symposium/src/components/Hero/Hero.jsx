@@ -221,15 +221,18 @@ const Hero = () => {
         </div>
 
         <p className={styles.organizer}>
-          Organized by <strong>IILM University, India</strong>
+          Organized by <strong>IILM University, Gurugram</strong>
         </p>
 
         <h1 className={styles.title}>
-          International Symposium on <br />
+          <span className={styles.titlePrefix}>International Symposium on</span>
           <span className={styles.gradientText}>
-            Research &amp; Global Innovation
-          </span>{" "}
-          <span className={styles.yearText}>2026</span>
+            Emerging Research in Advanced Technologies
+          </span>
+          <span className={styles.titleSubline}>
+            Interdisciplinary Computing &amp; Complex Systems
+          </span>
+          <span className={styles.titleAcronym}>ERATICS 2026</span>
         </h1>
 
         <p className={styles.tagline}>
