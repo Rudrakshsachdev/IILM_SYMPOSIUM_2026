@@ -276,12 +276,32 @@ const Hero = () => {
         {/* Event details */}
         <div className={styles.eventDetails}>
           <div className={styles.detailItem}>
-            <span className={styles.icon}>📍</span>
-            <span>IILM University, Gurugram</span>
+            <div className={styles.iconCircle}>
+              <svg viewBox="0 0 24 24" fill="none" className={styles.detailIcon}>
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor" opacity="0.2" />
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" strokeWidth="1.5" />
+                <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+              </svg>
+            </div>
+            <div className={styles.detailText}>
+              <span className={styles.detailLabel}>Venue</span>
+              <span className={styles.detailValue}>IILM University, Gurugram</span>
+            </div>
           </div>
           <div className={styles.detailItem}>
-            <span className={styles.icon}>📅</span>
-            <span>29th April 2026</span>
+            <div className={styles.iconCircle}>
+              <svg viewBox="0 0 24 24" fill="none" className={styles.detailIcon}>
+                <rect x="3" y="4" width="18" height="18" rx="3" fill="currentColor" opacity="0.2" />
+                <rect x="3" y="4" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M3 10h18" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M8 2v4M16 2v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <circle cx="12" cy="16" r="1.5" fill="currentColor" />
+              </svg>
+            </div>
+            <div className={styles.detailText}>
+              <span className={styles.detailLabel}>Date</span>
+              <span className={styles.detailValue}>29th April 2026</span>
+            </div>
           </div>
         </div>
 

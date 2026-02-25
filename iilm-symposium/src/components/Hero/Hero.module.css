@@ -306,7 +306,7 @@
 .eventDetails {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
 }
@@ -314,29 +314,71 @@
 .detailItem {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-  background: rgba(255, 255, 255, 0.04);
-  padding: 0.75rem 1.75rem;
-  border-radius: 12px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: var(--transition);
+  gap: 1rem;
   font-family: var(--font-main);
-  font-weight: 500;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.9rem 2rem 0.9rem 1rem;
+  border-radius: 14px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: var(--transition);
+  cursor: default;
 }
 
 .detailItem:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.25),
+    0 0 15px rgba(196, 30, 58, 0.08);
 }
 
-.icon {
-  font-size: 1.2rem;
-  display: inline-block;
+.iconCircle {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 12px;
+  background: rgba(196, 30, 58, 0.12);
+  border: 1px solid rgba(196, 30, 58, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.detailItem:hover .iconCircle {
+  background: rgba(196, 30, 58, 0.2);
+  border-color: rgba(196, 30, 58, 0.35);
+}
+
+.detailIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--accent-red);
+}
+
+.detailText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.detailLabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1;
+}
+
+.detailValue {
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.2;
 }
 
 /* ===== BUTTONS ===== */
