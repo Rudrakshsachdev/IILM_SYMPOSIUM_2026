@@ -8,6 +8,7 @@ import Organizers from "./components/Organizers/Organizers";
 import CallForPapers from "./components/CallForPapers/CallForPapers";
 import Registrations from "./components/Registrations/Registrations";
 import VenueContact from "./components/VenueContact/VenueContact";
+import Acknowledgement from "./components/Acknowledgement/Acknowledgement";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <CallForPapers />
       <Registrations />
       <VenueContact />
+      <Acknowledgement />
       <Footer />
     </>
   );
