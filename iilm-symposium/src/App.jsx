@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
+import Tracks from "./components/Tracks/Tracks";
 import ImportantDates from "./components/ImportantDates/ImportantDates";
 import Speakers from "./components/Speakers/Speakers";
 import Organizers from "./components/Organizers/Organizers";
@@ -17,6 +18,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Tracks />
       <ImportantDates />
       <Speakers />
       <Organizers />

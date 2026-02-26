@@ -105,6 +105,11 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
+                <a href="#tracks" className={styles.navLink}>
+                  Tracks
+                </a>
+              </li>
+              <li>
                 <a href="#speakers" className={styles.navLink}>
                   Speakers
                 </a>
@@ -168,6 +173,15 @@ const Navbar = () => {
                 onClick={closeMenu}
               >
                 About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#tracks"
+                className={styles.mobileNavLink}
+                onClick={closeMenu}
+              >
+                Tracks
               </a>
             </li>
             <li>
