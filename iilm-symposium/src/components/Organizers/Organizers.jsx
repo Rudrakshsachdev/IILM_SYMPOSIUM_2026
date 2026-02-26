@@ -113,6 +113,16 @@ const Organizers = () => {
 
   return (
     <section className={styles.organizers} id="organizers" ref={sectionRef}>
+      {/* Background circles animation */}
+      <div className={styles.circlesWrap} aria-hidden="true">
+        <div className={styles.centerGlow} />
+        <div className={`${styles.circleRing} ${styles.ring1}`} />
+        <div className={`${styles.circleRing} ${styles.ring2}`} />
+        <div className={`${styles.circleRing} ${styles.ring3}`} />
+        <div className={`${styles.circleRing} ${styles.ring4}`} />
+        <div className={styles.circlesVignette} />
+      </div>
+
       <div className={styles.container}>
         {/* Header */}
         <div className={`${styles.header} ${isVisible ? styles.animate : ""}`}>
