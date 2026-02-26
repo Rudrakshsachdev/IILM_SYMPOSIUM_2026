@@ -1,7 +1,89 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Organizers.module.css";
-import rudrakshImg from "../../assets/rudraksh.jpg";
 
+/* ─── Committee Data ─── */
+const committeeGroups = [
+  {
+    role: "General Chair",
+    members: [
+      { name: "Prof. (Dr.) Shamik Tiwari", designation: "Dean, SCSE", affiliation: "IILM University, Gurugram", international: false },
+      { name: "Dr. Aydin Azizi", designation: "Senior Lecturer", affiliation: "Oxford Brookes University, UK", international: true },
+      { name: "Dr. Jorge Esparteiro Garcia", designation: "Director, ADiT-Lab", affiliation: "IPVC, Portugal", international: true },
+      { name: "Dr. Shang Gao", designation: "Associate Professor in Informatics", affiliation: "Örebro University, Sweden", international: true },
+      { name: "Dr. Sara Paiva", designation: "Pro-President for Information Systems", affiliation: "IPVC, Portugal", international: true },
+    ],
+  },
+  {
+    role: "Conference Chair(s)",
+    members: [
+      { name: "Dr. Akshat Agrawal", designation: "Associate Professor & Cluster Lead", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Anurag Jain", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+    ],
+  },
+  {
+    role: "Executive Chair(s)",
+    members: [
+      { name: "Dr. Umang Garg", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Amar Shukla", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+    ],
+  },
+  {
+    role: "Program Chair(s)",
+    members: [
+      { name: "Dr. Sapna Arora", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Puja Acharya", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Rahul Thakur", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Naved Ahmad", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+    ],
+  },
+  {
+    role: "Delegate & Sponsorship Chair(s)",
+    members: [
+      { name: "Dr. Vaishali Maheshwari", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Sonam Lata", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+    ],
+  },
+  {
+    role: "Publicity & Media Chair(s)",
+    members: [
+      { name: "Ms. Anshita Shukla", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Puneet Bawa", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+    ],
+  },
+  {
+    role: "Finance & Accounts Chair(s)",
+    members: [
+      { name: "Dr. Aarti Chugh", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+    ],
+  },
+  {
+    role: "Registration Chair(s)",
+    members: [
+      { name: "Dr. Megha Rana", designation: "Faculty", affiliation: "Amity University, Haryana" },
+      { name: "Dr. Samridhi Singhal", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+    ],
+  },
+  {
+    role: "Hospitality & Accommodation Chair(s)",
+    members: [
+      { name: "Mr. Shagun Panghal", designation: "Staff, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Mr. Abhishek Toofani", designation: "Staff, SCSE", affiliation: "IILM University, Gurugram" },
+    ],
+  },
+  {
+    role: "Technical Program Committee",
+    members: [
+      { name: "Dr. Law Kumar Singh", designation: "Chair", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Pallavi Pandey", designation: "Co-Chair", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Jayati Tripathi", designation: "Member", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Pooja Batra Nagpal", designation: "Member", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Preeti Mehta", designation: "Member", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Vikas Jayasawal", designation: "Member", affiliation: "IILM University, Gurugram" },
+    ],
+  },
+];
+
+/* ─── Component ─── */
 const Organizers = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -14,135 +96,79 @@ const Organizers = () => {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2, rootMargin: "0px" }
+      { threshold: 0.06 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
 
-  const faculty = [
-    {
-      name: "Dr. Ananya Sharma",
-      role: "Convener",
-      institution: "IILM University",
-      image: "https://randomuser.me/api/portraits/women/68.jpg",
-    },
-    {
-      name: "Prof. Arvind Kapoor",
-      role: "Co-Convener",
-      institution: "IILM University",
-      image: "https://randomuser.me/api/portraits/men/52.jpg",
-    },
-    {
-      name: "Dr. Neha Verma",
-      role: "Organizing Secretary",
-      institution: "IILM University",
-      image: "https://randomuser.me/api/portraits/women/45.jpg",
-    },
-  ];
-
-  const students = [
-    {
-      name: "Devansh",
-      course: "B.Tech Second Year",
-      role: "Student Coordinator",
-      image: "https://randomuser.me/api/portraits/men/22.jpg",
-    },
-    {
-      name: "Rudraksh",
-      course: "B.Tech Second Year",
-      role: "Student Coordinator",
-      image: rudrakshImg,
-    },
-  ];
-
   return (
     <section className={styles.organizers} id="organizers" ref={sectionRef}>
-      {/* Floating background elements */}
-      <div className={styles.floatingCircle}></div>
-      <div className={styles.floatingBlob}></div>
-      <div className={styles.floatingDots}></div>
-
-      {/* Subtle grid lines overlay */}
-      <div className={styles.gridOverlay}></div>
-
       <div className={styles.container}>
-        <h2 className={`${styles.heading} ${isVisible ? styles.animate : ""}`}>
-          Organizing Committee
-        </h2>
+        {/* Header */}
+        <div className={`${styles.header} ${isVisible ? styles.animate : ""}`}>
+          <span className={styles.eyebrow}>Committee</span>
+          <h2 className={styles.heading}>
+            Organizing{" "}
+            <span className={styles.gradientText}>Committee</span>
+          </h2>
+          <p className={styles.introPara}>
+            The Organizing Committee for ERATICS 2026 comprises distinguished
+            academicians and researchers from IILM University (India), the
+            Polytechnic University of Viana do Castelo (Portugal), Örebro
+            University (Sweden), and Oxford Brookes University (United Kingdom),
+            ensuring a truly international and multidisciplinary symposium.
+          </p>
+        </div>
 
-        {/* Faculty Organizers */}
-        <h3 className={`${styles.subHeading} ${isVisible ? styles.animate : ""}`}>
-          Faculty Organizers
-        </h3>
-
-        <div className={styles.grid}>
-          {faculty.map((person, index) => (
-            <div
-              key={index}
-              className={`${styles.card} ${styles.facultyCard} ${isVisible ? styles.animate : ""}`}
-              style={{ transitionDelay: `${index * 0.15}s` }}
-            >
-              <div className={styles.imageWrapper}>
-                <img
-                  src={person.image}
-                  alt={person.name}
-                  className={styles.image}
-                  loading="lazy"
-                />
-              </div>
-              <div className={styles.cardContent}>
-                <h4>{person.name}</h4>
-                <p className={styles.role}>{person.role}</p>
-                <span className={styles.institution}>{person.institution}</span>
-              </div>
-              <div className={styles.cardGlow}></div>
+        {/* Committee Groups */}
+        {committeeGroups.map((group, gi) => (
+          <div
+            key={gi}
+            className={`${styles.groupBlock} ${isVisible ? styles.animate : ""}`}
+            style={{ "--gi": gi }}
+          >
+            {/* Role Title */}
+            <div className={styles.roleHeader}>
+              <span className={styles.roleNumber}>{String(gi + 1).padStart(2, "0")}</span>
+              <h3 className={styles.roleTitle}>{group.role}</h3>
             </div>
-          ))}
-        </div>
 
-        {/* Elegant Divider */}
-        <div className={`${styles.divider} ${isVisible ? styles.animate : ""}`}>
-          <span className={styles.dividerDot}></span>
-        </div>
+            {/* Members Grid */}
+            <div className={styles.membersGrid}>
+              {group.members.map((m, mi) => (
+                <div key={mi} className={styles.memberCard}>
+                  {/* Initials Avatar */}
+                  <div className={styles.avatar}>
+                    <span>
+                      {m.name
+                        .replace(/^(Prof\.\s*\(Dr\.\)\s*|Dr\.\s*|Mr\.\s*|Ms\.\s*)/i, "")
+                        .split(" ")
+                        .filter(Boolean)
+                        .map((w) => w[0])
+                        .slice(0, 2)
+                        .join("")
+                        .toUpperCase()}
+                    </span>
+                  </div>
 
-        {/* Student Coordinators */}
-        <h3 className={`${styles.subHeading} ${isVisible ? styles.animate : ""}`}>
-          Student Coordinators
-        </h3>
-
-        <div className={styles.grid}>
-          {students.map((person, index) => (
-            <div
-              key={index}
-              className={`${styles.card} ${styles.studentCard} ${isVisible ? styles.animate : ""}`}
-              style={{ transitionDelay: `${(index + faculty.length) * 0.15}s` }}
-            >
-              <div className={styles.imageWrapper}>
-                <img
-                  src={person.image}
-                  alt={person.name}
-                  className={styles.image}
-                  loading="lazy"
-                />
-              </div>
-              <div className={styles.cardContent}>
-                <h4>{person.name}</h4>
-                <p className={styles.course}>{person.course}</p>
-                <span className={styles.role}>{person.role}</span>
-              </div>
-              <div className={styles.cardGlow}></div>
+                  <div className={styles.memberInfo}>
+                    <span className={styles.memberName}>{m.name}</span>
+                    <span className={styles.memberDesig}>{m.designation}</span>
+                    <span className={styles.memberAffil}>
+                      {m.affiliation}
+                      {m.international && (
+                        <span className={styles.intlBadge}>International</span>
+                      )}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
