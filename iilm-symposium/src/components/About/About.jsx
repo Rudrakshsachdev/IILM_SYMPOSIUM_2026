@@ -76,6 +76,11 @@ const About = () => {
 
   return (
     <section className={styles.about} id="about" ref={sectionRef}>
+      {/* Subtle ambient background elements */}
+      <div className={styles.ambientOrb1} aria-hidden="true" />
+      <div className={styles.ambientOrb2} aria-hidden="true" />
+      <div className={styles.bgNoise} aria-hidden="true" />
+
       <div className={styles.container}>
 
         {/* ── Section Header ── */}
