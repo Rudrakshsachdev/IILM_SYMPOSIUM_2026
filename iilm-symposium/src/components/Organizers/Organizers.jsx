@@ -81,6 +81,13 @@ const committeeGroups = [
       { name: "Dr. Vikas Jayasawal", designation: "Member", affiliation: "IILM University, Gurugram" },
     ],
   },
+  {
+    role: "Student Coordinators",
+    members: [
+      { name: "Rudraksh", designation: "B.Tech 2nd Year", affiliation: "IILM University, Gurugram" },
+      { name: "Devansh", designation: "B.Tech 2nd Year", affiliation: "IILM University, Gurugram" },
+    ],
+  },
 ];
 
 /* ─── Component ─── */
