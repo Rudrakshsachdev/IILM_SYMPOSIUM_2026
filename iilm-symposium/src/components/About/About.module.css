@@ -93,6 +93,30 @@
   line-height: 1.7;
 }
 
+/* ===== INTRO CARD ===== */
+.introCard {
+  position: relative;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: var(--transition-smooth);
+}
+
+.introCard.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.introCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
 /* ===== TWO-COLUMN CONTENT ===== */
 .contentGrid {
   display: grid;
@@ -161,11 +185,115 @@
   font-weight: 600;
 }
 
+/* ===== ORGANIZING COMMITTEE ===== */
+.committeeSection {
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: var(--transition-smooth) 0.25s;
+}
+
+.committeeSection.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.committeeHeading {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.committeeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.committeeCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 1.75rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition-smooth);
+  transition-delay: calc(var(--index, 0) * 0.1s);
+}
+
+.committeeCard.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.committeeCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(196, 30, 58, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.committeeHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.flag {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.institutionName {
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+.memberList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.memberItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.memberName {
+  font-family: var(--font-main);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.memberRole {
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.4;
+}
+
 /* ===== STATS STRIP ===== */
 .statsStrip {
   display: flex;
   justify-content: center;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
@@ -222,128 +350,7 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
-/* ===== HIGHLIGHT CARDS ===== */
-.highlights {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
 
-.card {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: var(--transition-smooth);
-}
-
-.card.animate {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: calc(0.3s + var(--index, 0) * 0.12s);
-}
-
-.cardInner {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 2.5rem 2rem;
-  border-radius: 20px;
-  height: 100%;
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-}
-
-.cardInner:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(196, 30, 58, 0.2);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-}
-
-.cardTop {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.cardIconCircle {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: rgba(196, 30, 58, 0.1);
-  border: 1px solid rgba(196, 30, 58, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-}
-
-.cardInner:hover .cardIconCircle {
-  background: rgba(196, 30, 58, 0.18);
-  border-color: rgba(196, 30, 58, 0.35);
-}
-
-.hlIcon {
-  width: 22px;
-  height: 22px;
-  color: var(--accent-red);
-}
-
-.cardBadge {
-  font-family: var(--font-main);
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.45);
-  padding: 0.35rem 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 100px;
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.cardTitle {
-  font-family: var(--font-title);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 0.75rem;
-}
-
-.cardText {
-  font-family: var(--font-main);
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  flex: 1;
-}
-
-.cardFooter {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--accent-red);
-  font-family: var(--font-main);
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.cardFooter:hover {
-  gap: 1rem;
-}
-
-.arrowIcon {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.3s ease;
-}
-
-.cardFooter:hover .arrowIcon {
-  transform: translateX(4px);
-}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 991px) {
@@ -356,9 +363,8 @@
     gap: 1.5rem;
   }
 
-  .highlights {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+  .committeeGrid {
+    grid-template-columns: 1fr;
   }
 
   .sectionHeader {
@@ -371,13 +377,13 @@
     padding: 5rem 1.25rem;
   }
 
-  .highlights {
+  .committeeGrid {
     grid-template-columns: 1fr;
   }
 
   .statsStrip {
     flex-wrap: wrap;
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
   }
 
   .statItem {
@@ -397,8 +403,12 @@
     padding: 2rem 1.5rem;
   }
 
-  .cardInner {
+  .introCard {
     padding: 2rem 1.5rem;
+  }
+
+  .committeeCard {
+    padding: 1.5rem;
   }
 }
 
@@ -431,7 +441,9 @@
   .sectionHeader,
   .contentBlock,
   .statsStrip,
-  .card {
+  .introCard,
+  .committeeSection,
+  .committeeCard {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
