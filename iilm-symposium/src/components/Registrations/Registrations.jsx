@@ -1,6 +1,62 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Registrations.module.css";
 
+/* ─── Registration Tiers ─── */
+const tiers = [
+  {
+    id: "student",
+    icon: "🎓",
+    title: "Students",
+    price: "₹1,500",
+    period: "per participant",
+    features: [
+      "Access to all symposium sessions",
+      "Participation certificate",
+      "Conference materials & kit",
+      "Networking opportunities",
+    ],
+    popular: false,
+  },
+  {
+    id: "academic",
+    icon: "💼",
+    title: "Academicians & Professionals",
+    price: "₹3,000",
+    period: "per participant",
+    features: [
+      "Access to all symposium sessions",
+      "Symposium proceedings with ISBN",
+      "Networking & collaboration access",
+      "Conference materials & kit",
+      "Publication opportunity",
+    ],
+    popular: true,
+  },
+  {
+    id: "international",
+    icon: "🌍",
+    title: "International Participants",
+    price: "$100",
+    period: "per participant",
+    features: [
+      "Full global participation access",
+      "Symposium proceedings with ISBN",
+      "Publication & indexing access",
+      "Digital conference materials",
+      "International collaboration network",
+    ],
+    popular: false,
+  },
+];
+
+/* ─── Payment Details ─── */
+const paymentInfo = [
+  { label: "Bank Name", value: "XYZ Bank" },
+  { label: "Account Name", value: "IILM University Symposium" },
+  { label: "Account Number", value: "1234567890" },
+  { label: "IFSC Code", value: "XYZB0001234" },
+];
+
 const Registrations = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -13,116 +69,118 @@ const Registrations = () => {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2, rootMargin: "0px" }
+      { threshold: 0.06 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
 
+  const a = isVisible ? styles.animate : "";
+
   return (
-    <section className={styles.registration} id="registration" ref={sectionRef}>
-      {/* Decorative background elements */}
-      <div className={styles.bgGrid}></div>
-      <div className={styles.bgCircle}></div>
-      <div className={styles.bgParticles}></div>
+    <section className={styles.regSection} id="registration" ref={sectionRef}>
+      {/* ── Background ── */}
+      <div className={styles.ambientOrb1} aria-hidden="true" />
+      <div className={styles.ambientOrb2} aria-hidden="true" />
+      <div className={styles.bgNoise} aria-hidden="true" />
+      <div className={styles.bgVignette} aria-hidden="true" />
 
       <div className={styles.container}>
-        <h2 className={`${styles.heading} ${isVisible ? styles.animate : ""}`}>
-          Registration Details
-        </h2>
-
-        <div className={styles.feeGrid}>
-          {/* Student Card */}
-          <div
-            className={`${styles.feeCard} ${isVisible ? styles.animate : ""}`}
-            style={{ transitionDelay: "0.1s" }}
-          >
-            <div className={styles.cardIcon}>🎓</div>
-            <h3>Students</h3>
-            <p className={styles.price}>₹1500</p>
-            <p className={styles.description}>
-              Includes access to all sessions & certificate
-            </p>
-            <div className={styles.cardGlow}></div>
-          </div>
-
-          {/* Academicians / Professionals (Highlighted) */}
-          <div
-            className={`${styles.feeCard} ${styles.highlightCard} ${
-              isVisible ? styles.animate : ""
-            }`}
-            style={{ transitionDelay: "0.2s" }}
-          >
-            <div className={styles.cardIcon}>💼</div>
-            <h3>Academicians / Professionals</h3>
-            <p className={styles.price}>₹3000</p>
-            <p className={styles.description}>
-              Includes proceedings & networking access
-            </p>
-            <div className={styles.cardGlow}></div>
-          </div>
-
-          {/* International Card */}
-          <div
-            className={`${styles.feeCard} ${isVisible ? styles.animate : ""}`}
-            style={{ transitionDelay: "0.3s" }}
-          >
-            <div className={styles.cardIcon}>🌍</div>
-            <h3>International Participants</h3>
-            <p className={styles.price}>$100</p>
-            <p className={styles.description}>
-              Includes global participation & publication access
-            </p>
-            <div className={styles.cardGlow}></div>
-          </div>
+        {/* ═══════ HEADER ═══════ */}
+        <div className={`${styles.header} ${a}`}>
+          <span className={styles.eyebrow}>
+            <span className={styles.eyebrowDot} />
+            Registration Open
+          </span>
+          <h2 className={styles.heading}>
+            Registration{" "}
+            <span className={styles.gradientText}>Details</span>
+          </h2>
+          <p className={styles.subtitle}>
+            Secure your spot at the International Symposium 2026.
+            Choose the plan that best suits your participation.
+          </p>
         </div>
 
-        {/* Payment Information Card */}
-        <div
-          className={`${styles.paymentCard} ${isVisible ? styles.animate : ""}`}
-          style={{ transitionDelay: "0.4s" }}
-        >
-          <div className={styles.paymentAccent}></div>
-          <h3>Payment Information</h3>
-          <div className={styles.paymentDetails}>
-            <div className={styles.detailRow}>
-              <span className={styles.detailLabel}>Bank Name:</span>
-              <span className={styles.detailValue}>XYZ Bank</span>
+        {/* ═══════ PRICING CARDS ═══════ */}
+        <div className={styles.pricingGrid}>
+          {tiers.map((tier, i) => (
+            <div
+              key={tier.id}
+              className={`${styles.pricingCard} ${tier.popular ? styles.popularCard : ""} ${a}`}
+              style={{ "--index": i }}
+            >
+              {tier.popular && (
+                <div className={styles.popularBadge}>Most Popular</div>
+              )}
+              <div className={styles.cardShine} />
+
+              <div className={styles.cardTop}>
+                <div className={styles.tierIconWrap}>
+                  <span className={styles.tierEmoji}>{tier.icon}</span>
+                </div>
+                <h3 className={styles.tierTitle}>{tier.title}</h3>
+              </div>
+
+              <div className={styles.priceBlock}>
+                <span className={styles.priceValue}>{tier.price}</span>
+                <span className={styles.pricePeriod}>{tier.period}</span>
+              </div>
+
+              <div className={styles.divider} />
+
+              <ul className={styles.featureList}>
+                {tier.features.map((f, j) => (
+                  <li key={j} className={styles.featureItem}>
+                    <svg className={styles.featureCheck} viewBox="0 0 20 20" fill="none">
+                      <path d="M16.5 5.5L8.25 14 3.5 9.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a href="#" className={tier.popular ? styles.cardBtnPrimary : styles.cardBtnSecondary}>
+                <span>Register Now</span>
+                <svg className={styles.cardBtnIcon} viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
             </div>
-            <div className={styles.detailRow}>
-              <span className={styles.detailLabel}>Account Name:</span>
-              <span className={styles.detailValue}>IILM University Symposium</span>
-            </div>
-            <div className={styles.detailRow}>
-              <span className={styles.detailLabel}>Account Number:</span>
-              <span className={styles.detailValue}>1234567890</span>
-            </div>
-            <div className={styles.detailRow}>
-              <span className={styles.detailLabel}>IFSC Code:</span>
-              <span className={styles.detailValue}>XYZB0001234</span>
-            </div>
-          </div>
-          <div className={styles.cardGlow}></div>
+          ))}
         </div>
 
-        <div
-          className={`${styles.buttonGroup} ${isVisible ? styles.animate : ""}`}
-          style={{ transitionDelay: "0.5s" }}
-        >
-          <a href="#" className={styles.primaryBtn}>
-            <span>Register Now</span>
-            <svg className={styles.btnIcon} viewBox="0 0 24 24" width="20" height="20">
-              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round"/>
-            </svg>
-          </a>
+        {/* ═══════ PAYMENT INFO ═══════ */}
+        <div className={`${styles.paymentSection} ${a}`}>
+          <div className={styles.paymentCard}>
+            <div className={styles.paymentShine} />
+            <div className={styles.paymentAccent} />
+            <div className={styles.paymentHeader}>
+              <div className={styles.paymentIconWrap}>
+                <svg className={styles.paymentIcon} viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M2 10h20" stroke="currentColor" strokeWidth="1.5" />
+                </svg>
+              </div>
+              <div>
+                <h3 className={styles.paymentTitle}>Payment Information</h3>
+                <p className={styles.paymentSubtitle}>Bank transfer details</p>
+              </div>
+            </div>
+            <div className={styles.paymentGrid}>
+              {paymentInfo.map((item, i) => (
+                <div key={i} className={styles.paymentItem}>
+                  <span className={styles.paymentLabel}>{item.label}</span>
+                  <span className={styles.paymentValue}>{item.value}</span>
+                </div>
+              ))}
+            </div>
+            <p className={styles.paymentNote}>
+              Please share the payment receipt via email to confirm your registration.
+            </p>
+          </div>
         </div>
       </div>
     </section>
