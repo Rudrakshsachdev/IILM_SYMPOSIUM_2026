@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
+import Universities from "./components/Universities/Universities";
 import Tracks from "./components/Tracks/Tracks";
 //import ImportantDates from "./components/ImportantDates/ImportantDates";
 //import Speakers from "./components/Speakers/Speakers";
@@ -18,6 +19,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Universities />
       <Tracks />
       {/* <ImportantDates /> */}
       {/*<Speakers />*/}
