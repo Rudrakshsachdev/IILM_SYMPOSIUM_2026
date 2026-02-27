@@ -110,8 +110,8 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                <a href="#speakers" className={styles.navLink}>
-                  Speakers
+                <a href="#organizers" className={styles.navLink}>
+                  Organizers
                 </a>
               </li>
               <li>
@@ -119,6 +119,7 @@ const Navbar = () => {
                   Call for Papers
                 </a>
               </li>
+              
               <li>
                 <a href="#registration" className={styles.navLink}>
                   Registration
