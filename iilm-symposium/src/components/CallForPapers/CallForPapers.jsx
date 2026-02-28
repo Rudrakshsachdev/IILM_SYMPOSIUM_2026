@@ -15,7 +15,7 @@ const datesData = [
   { icon: "📝", label: "Abstract Submission", date: "30 June 2026", status: "upcoming" },
   { icon: "📄", label: "Full Paper Deadline", date: "15 July 2026", status: "upcoming" },
   { icon: "✅", label: "Acceptance Notice", date: "10 Aug 2026", status: "upcoming" },
-  { icon: "🎓", label: "Symposium Day", date: "12–13 Sept 2026", status: "highlight" },
+  { icon: "🎓", label: "Symposium Day", date: "29th April 2026", status: "highlight" },
 ];
 
 /* ─── Submission Guidelines ─── */
