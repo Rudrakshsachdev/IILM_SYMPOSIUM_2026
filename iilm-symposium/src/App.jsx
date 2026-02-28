@@ -9,6 +9,7 @@ import Tracks from "./components/Tracks/Tracks";
 import Organizers from "./components/Organizers/Organizers";
 import CallForPapers from "./components/CallForPapers/CallForPapers";
 import Registrations from "./components/Registrations/Registrations";
+import Highlights from "./components/Highlights/Highlights";
 import VenueContact from "./components/VenueContact/VenueContact";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Footer from "./components/Footer/Footer";
@@ -26,6 +27,7 @@ function App() {
       <Organizers />
       <CallForPapers />
       <Registrations />
+      <Highlights />
       <VenueContact />
       <ContactUs />
       <Footer />
