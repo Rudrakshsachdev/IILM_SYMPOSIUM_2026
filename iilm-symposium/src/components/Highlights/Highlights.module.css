@@ -314,8 +314,8 @@
 .marqueeSlide {
   position: relative;
   flex-shrink: 0;
-  width: 340px;
-  height: 230px;
+  width: 300px;
+  height: 340px;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--glass-border);
@@ -327,9 +327,18 @@
   box-shadow: 0 12px 40px rgba(0,0,0,0.3);
 }
 
+.marqueeSlideWide {
+  width: 500px;
+}
+
+.marqueeSlideWide .marqueeImg {
+  object-position: center center;
+}
+
 .marqueeImg {
   width: 100%; height: 100%;
   object-fit: cover; display: block;
+  object-position: center top;
   transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
 }
 
@@ -371,7 +380,7 @@
   .heading { font-size: 2.2rem; }
   .hlCard, .testimonialCard { padding: 1.75rem 1.5rem; border-radius: 20px; }
   .statValue { font-size: 1.5rem; }
-  .marqueeSlide { width: 280px; height: 190px; }
+  .marqueeSlide { width: 260px; height: 300px; }
 }
 
 @media (max-width: 480px) {
@@ -380,7 +389,7 @@
   .statsStrip { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
   .statItem { padding: 1rem 0.75rem; border-radius: 14px; }
   .hlCard, .testimonialCard { padding: 1.5rem 1.25rem; border-radius: 16px; }
-  .marqueeSlide { width: 240px; height: 160px; border-radius: 14px; }
+  .marqueeSlide { width: 220px; height: 260px; border-radius: 14px; }
 }
 
 /* ═══════════════════════════════════

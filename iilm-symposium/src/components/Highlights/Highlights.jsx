@@ -1,23 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Highlights.module.css";
-import imgKeynote from "../../assets/event_keynote.png";
-import imgAudience from "../../assets/event_audience.png";
-import imgNetworking from "../../assets/event_networking.png";
-import imgAward from "../../assets/event_award.png";
-import imgPanel from "../../assets/event_panel.png";
-import imgPoster from "../../assets/event_poster.png";
-import imgWorkshop from "../../assets/event_workshop.png";
-import imgGroup from "../../assets/event_group.png";
+import groupPhoto from "../../assets/group.jpeg";
+import pallavi from "../../assets/pallavi.jpeg";
+import pooja from "../../assets/pooja.jpeg";
+import puja from "../../assets/puja.jpeg";
+import rudraksh from "../../assets/rudraksh1.jpeg";
+import sapna from "../../assets/sapna.jpeg";
+import shailesh from "../../assets/shailesh.jpeg";
+import shivansee from "../../assets/shivansee.jpeg";
+import sonam from "../../assets/sonam.jpeg";
+
 
 const GALLERY = [
-    { src: imgKeynote, caption: "Keynote Session" },
-    { src: imgAudience, caption: "Symposium Audience" },
-    { src: imgPanel, caption: "Panel Discussion" },
-    { src: imgNetworking, caption: "Networking Session" },
-    { src: imgAward, caption: "Award Ceremony" },
-    { src: imgPoster, caption: "Poster Presentations" },
-    { src: imgWorkshop, caption: "Hands-on Workshop" },
-    { src: imgGroup, caption: "Group Photo" },
+    { src: groupPhoto, caption: "Group Photo", wide: true },
+    { src: pallavi, caption: "Dr. Pallavi Pandey" },
+    { src: pooja, caption: "Dr. Pooja Batra Nagpal" },
+    { src: puja, caption: "Dr. Puja Acharya" },
+    { src: rudraksh, caption: "Rudraksh — Web Team" },
+    { src: sapna, caption: "Dr. Sapna Arora" },
+    { src: shailesh, caption: "Shailesh" },
+    { src: shivansee, caption: "Shivansee" },
+    { src: sonam, caption: "Dr. Sonam Lata" },
 ];
 
 const STATS = [
@@ -144,7 +147,7 @@ const Highlights = () => {
                 <div className={styles.marqueeTrack}>
                     {/* Duplicate images for seamless infinite loop */}
                     {[...GALLERY, ...GALLERY].map((img, i) => (
-                        <div className={styles.marqueeSlide} key={i}>
+                        <div className={`${styles.marqueeSlide} ${img.wide ? styles.marqueeSlideWide : ""}`} key={i}>
                             <img
                                 src={img.src}
                                 alt={img.caption}
