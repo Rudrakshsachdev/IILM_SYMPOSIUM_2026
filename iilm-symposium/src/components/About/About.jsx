@@ -78,12 +78,12 @@ const About = () => {
   return (
     <section className={styles.about} id="about" ref={sectionRef}>
       {/* Subtle ambient background elements */}
-      <RippleGrid
+      {/* <RippleGrid
         gridColor="#c41e3a"
         opacity={0.30}
         enableRainbow={false}
         mouseInteraction={true}
-      />
+      /> */}
       <div className={styles.ambientOrb1} aria-hidden="true" />
       <div className={styles.ambientOrb2} aria-hidden="true" />
       <div className={styles.bgNoise} aria-hidden="true" />
