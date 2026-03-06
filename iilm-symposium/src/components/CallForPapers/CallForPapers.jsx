@@ -20,9 +20,14 @@ const datesData = [
 /* ─── Submission Guidelines ─── */
 const guidelines = [
   { text: "Papers must be original and unpublished", highlight: false },
-  { text: "Table Editable", highlight: false },
+  { text: "Table should be editable", highlight: false },
+  { text: "No screenshots of tables", highlight: false },
+  { text: "Formulas should also be editable", highlight: false },
+  { text: "Figures should either be open access or self-made (No AI-generated figures)", highlight: false },
   { text: "Full paper length: 6–8 pages", highlight: false },
   { text: "Follow IEEE / APA formatting guidelines", highlight: true },
+  { text: "References should be in numbered format (numbered citation style)", highlight: true },
+  { text: "No plagiarism is allowed", highlight: true },
   { text: "All submissions undergo double-blind peer review", highlight: true },
 ];
 
@@ -165,10 +170,7 @@ const CallForPapers = () => {
               </div>
             </div>
             <p className={styles.pubText}>
-              Selected papers will be published in the symposium proceedings
-              with <strong>ISBN</strong>. Outstanding papers may be considered
-              for publication in <strong>indexed journals</strong> (subject to
-              review).
+              Selected papers will be published in the Springer Book Series.
             </p>
             <div className={styles.pubBadges}>
               <span className={styles.pubBadge}>
