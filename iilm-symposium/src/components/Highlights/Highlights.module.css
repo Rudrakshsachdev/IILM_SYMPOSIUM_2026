@@ -149,17 +149,19 @@
 }
 
 /* ═══════════════════════════════════
-   INFO ROW (highlights + testimonial)
+   INFO ROW (highlights)
 ═══════════════════════════════════ */
 .infoRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 4rem;
 }
 
 /* Highlights Card */
 .hlCard {
+  width: 100%;
+  max-width: 800px;
   position: relative; padding: 2rem;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -185,8 +187,7 @@
   pointer-events: none;
 }
 
-.hlCard:hover .hlCardShine,
-.testimonialCard:hover .hlCardShine { left: 150%; }
+.hlCard:hover .hlCardShine { left: 150%; }
 
 .hlCardAccent {
   position: absolute; top: 0; left: 2rem;
@@ -215,57 +216,6 @@
   color: var(--accent-red); margin-top: 2px;
 }
 
-/* Testimonial Card */
-.testimonialCard {
-  position: relative; padding: 2rem;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 24px; overflow: hidden;
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  transition: var(--transition);
-  opacity: 0; transform: translateY(20px);
-  transition: var(--transition-smooth) 0.35s;
-}
-
-.testimonialCard.animate { opacity: 1; transform: translateY(0); }
-
-.testimonialCard:hover {
-  background: var(--glass-hover-bg);
-  border-color: var(--glass-hover-border);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-.quoteIcon {
-  width: 40px; height: 40px;
-  color: var(--accent-red);
-  margin-bottom: 0.5rem;
-}
-
-.testimonialQuote {
-  font-family: var(--font-main);
-  font-size: 0.88rem; font-style: italic;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.75; margin: 0 0 1.25rem;
-}
-
-.testimonialAuthorRow {
-  display: flex; align-items: center; gap: 0.75rem;
-}
-
-.testimonialAuthor {
-  display: block;
-  font-family: var(--font-title);
-  font-size: 0.88rem; font-weight: 700;
-  color: var(--white);
-}
-
-.testimonialRole {
-  display: block;
-  font-family: var(--font-main);
-  font-size: 0.72rem; font-weight: 500;
-  color: rgba(255,255,255,0.4);
-  margin-top: 0.15rem;
-}
 
 /* ═══════════════════════════════════
    IMAGE MARQUEE
@@ -371,14 +321,13 @@
 @media (max-width: 991px) {
   .hlSection { padding: 6rem 0 4rem; }
   .statsStrip { grid-template-columns: repeat(2, 1fr); }
-  .infoRow { grid-template-columns: 1fr; }
   .header { margin-bottom: 3rem; }
 }
 
 @media (max-width: 768px) {
   .hlSection { padding: 5rem 0 3.5rem; }
   .heading { font-size: 2.2rem; }
-  .hlCard, .testimonialCard { padding: 1.75rem 1.5rem; border-radius: 20px; }
+  .hlCard { padding: 1.75rem 1.5rem; border-radius: 20px; }
   .statValue { font-size: 1.5rem; }
   .marqueeSlide { width: 260px; height: 300px; }
 }
@@ -388,7 +337,7 @@
   .heading { font-size: 1.8rem; }
   .statsStrip { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
   .statItem { padding: 1rem 0.75rem; border-radius: 14px; }
-  .hlCard, .testimonialCard { padding: 1.5rem 1.25rem; border-radius: 16px; }
+  .hlCard { padding: 1.5rem 1.25rem; border-radius: 16px; }
   .marqueeSlide { width: 220px; height: 260px; border-radius: 14px; }
 }
 
@@ -396,7 +345,7 @@
    ACCESSIBILITY
 ═══════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
-  .header, .statsStrip, .hlCard, .testimonialCard, .marqueeWrap {
+  .header, .statsStrip, .hlCard, .marqueeWrap {
     opacity: 1 !important; transform: none !important; transition: none !important;
   }
   .ambientOrb1, .ambientOrb2 { animation: none !important; }

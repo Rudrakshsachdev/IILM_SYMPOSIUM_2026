@@ -37,13 +37,6 @@ const HIGHLIGHTS = [
     "Best Paper Award in Sustainable Computing category",
 ];
 
-const TESTIMONIAL = {
-    quote:
-        "An outstanding symposium that truly bridges the gap between academic research and real-world impact. The interdisciplinary approach was refreshing and highly productive.",
-    author: "Dr. Aydin Azizi",
-    role: "Senior Lecturer, Oxford Brookes University",
-};
-
 const Highlights = () => {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
@@ -123,21 +116,6 @@ const Highlights = () => {
                                 </li>
                             ))}
                         </ul>
-                    </div>
-
-                    {/* Testimonial */}
-                    <div className={`${styles.testimonialCard} ${a}`}>
-                        <div className={styles.hlCardShine} />
-                        <svg className={styles.quoteIcon} viewBox="0 0 24 24" fill="none">
-                            <path d="M10 11H6c0-2.8 1.2-4 4-4V5c-4 0-6 2-6 6v6h6V11zM22 11h-4c0-2.8 1.2-4 4-4V5c-4 0-6 2-6 6v6h6V11z" fill="currentColor" opacity="0.15" />
-                        </svg>
-                        <p className={styles.testimonialQuote}>"{TESTIMONIAL.quote}"</p>
-                        <div className={styles.testimonialAuthorRow}>
-                            <div>
-                                <span className={styles.testimonialAuthor}>{TESTIMONIAL.author}</span>
-                                <span className={styles.testimonialRole}>{TESTIMONIAL.role}</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
