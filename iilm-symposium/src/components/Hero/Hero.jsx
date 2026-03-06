@@ -220,9 +220,19 @@ const Hero = () => {
           <span>International Symposium 2026</span>
         </div>
 
-        <p className={styles.organizer}>
-          Organized by <strong>IILM University, Gurugram</strong>
-        </p>
+        {/* Joint Organizer */}
+        <div className={styles.jointOrganizer}>
+          <span className={styles.jointLabel}>Jointly Organized by</span>
+          <div className={styles.jointMain}>
+            <strong>SCSE, IILM University, Gurugram</strong>
+          </div>
+          <div className={styles.jointForeign}>
+            <span className={styles.jointAnd}>&amp;</span>
+            <span className={styles.foreignUni}>Instituto Politécnico de Viana do Castelo</span>
+            <span className={styles.foreignUni}>Oxford Brookes University</span>
+            <span className={styles.foreignUni}>Örebro University</span>
+          </div>
+        </div>
 
         <h1 className={styles.title}>
           <span className={styles.titlePrefix}>International Symposium on</span>
