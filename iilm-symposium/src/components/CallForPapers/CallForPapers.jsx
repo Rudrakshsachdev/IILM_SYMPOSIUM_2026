@@ -20,7 +20,7 @@ const datesData = [
 /* ─── Submission Guidelines ─── */
 const guidelines = [
   { text: "Papers must be original and unpublished", highlight: false },
-  { text: "Abstract should not exceed 300 words", highlight: false },
+  { text: "Table Editable", highlight: false },
   { text: "Full paper length: 6–8 pages", highlight: false },
   { text: "Follow IEEE / APA formatting guidelines", highlight: true },
   { text: "All submissions undergo double-blind peer review", highlight: true },
