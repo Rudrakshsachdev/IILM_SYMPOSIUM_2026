@@ -106,7 +106,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a href="#tracks" className={styles.navLink}>
-                  Tracks
+                  Themes
                 </a>
               </li>
               <li>
