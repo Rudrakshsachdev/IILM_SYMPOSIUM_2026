@@ -13,8 +13,12 @@ const committeeData = [
       },
       {
         name: "Dr. Akshat Agrawal",
-        role: "Associate Professor & Cluster Lead",
+        role: "Associate Professor & Cluster Lead, SCSE",
       },
+      {
+        name: "Dr. Anurag Jain",
+        role: "Professor, SCSE"
+      }
     ],
   },
   {
@@ -184,8 +188,8 @@ const About = () => {
         <div className={`${styles.statsStrip} ${isVisible ? styles.animate : ""}`}>
           {[
             { value: "4", label: "Partner Universities" },
-            { value: "3", label: "Countries" },
-            { value: "Online", label: "Format" },
+            { value: "4", label: "Countries" },
+            { value: "Hybrid", label: "Format" },
             { value: "2026", label: "Edition" },
           ].map((stat, i) => (
             <div key={i} className={styles.statItem}>

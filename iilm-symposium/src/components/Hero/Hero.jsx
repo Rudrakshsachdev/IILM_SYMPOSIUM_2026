@@ -325,7 +325,7 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className={styles.buttonGroup}>
-          <a href="#registration" className={styles.primaryBtn}>
+          <a href="http://cmt3.research.microsoft.com/ERATICS2026" className={styles.primaryBtn}>
             <span>Register Now</span>
             <svg className={styles.btnIcon} viewBox="0 0 24 24" fill="none">
               <path
@@ -337,7 +337,7 @@ const Hero = () => {
               />
             </svg>
           </a>
-          <a href="#papers" className={styles.secondaryBtn}>
+          <a href="http://cmt3.research.microsoft.com/ERATICS2026" className={styles.secondaryBtn}>
             <span>Submit Paper</span>
             <svg className={styles.btnIcon} viewBox="0 0 24 24" fill="none">
               <path
