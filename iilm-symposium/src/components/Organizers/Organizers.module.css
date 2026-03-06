@@ -195,26 +195,9 @@
 .roleHeader {
   display: flex;
   align-items: center;
-  gap: 1rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.roleNumber {
-  font-family: var(--font-title);
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--accent-red);
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: rgba(196, 30, 58, 0.1);
-  border: 1px solid rgba(196, 30, 58, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
 }
 
 .roleTitle {
@@ -225,6 +208,8 @@
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent-red);
 }
 
 /* ===== MEMBERS GRID ===== */
@@ -237,12 +222,25 @@
 /* ===== MEMBER CARD ===== */
 .memberCard {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+  flex-direction: column;
   padding: 1.25rem 1.5rem;
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.memberCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent-red);
+  opacity: 0;
   transition: var(--transition);
 }
 
@@ -253,28 +251,8 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* ── Avatar ── */
-.avatar {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(196, 30, 58, 0.15), rgba(196, 30, 58, 0.06));
-  border: 1px solid rgba(196, 30, 58, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-title);
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--accent-red);
-  letter-spacing: 0.02em;
-  transition: var(--transition);
-}
-
-.memberCard:hover .avatar {
-  background: linear-gradient(135deg, rgba(196, 30, 58, 0.25), rgba(196, 30, 58, 0.1));
-  border-color: rgba(196, 30, 58, 0.35);
+.memberCard:hover::before {
+  opacity: 1;
 }
 
 /* ── Info ── */
@@ -374,12 +352,6 @@
   .memberCard {
     padding: 1rem;
     border-radius: 12px;
-  }
-
-  .avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
   }
 }
 

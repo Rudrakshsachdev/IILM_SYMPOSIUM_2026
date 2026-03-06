@@ -16,76 +16,76 @@ const committeeGroups = [
   {
     role: "Conference Chair(s)",
     members: [
-      { name: "Dr. Akshat Agrawal", designation: "Associate Professor & Cluster Lead", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Anurag Jain", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Akshat Agrawal", designation: "Associate Professor & Cluster Lead, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Anurag Jain", designation: "Professor, SCSE", affiliation: "IILM University, Gurugram" },
     ],
   },
   {
     role: "Executive Chair(s)",
     members: [
-      { name: "Dr. Umang Garg", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Amar Shukla", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Umang Garg", designation: "Associate Professor & Cluster Lead (Cybersecurity & Intelligence), SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Amar Shukla", designation: "Associate Professor &  Cluster Lead (AI & Intelligent Systems), SCSE", affiliation: "IILM University, Gurugram" },
     ],
   },
   {
     role: "Program Chair(s)",
     members: [
-      { name: "Dr. Sapna Arora", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Puja Acharya", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Rahul Thakur", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Naved Ahmad", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Sapna Arora", designation: "Associate Professor, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Puja Acharya", designation: "Associate Professor, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Rahul Thakur", designation: "Assistant Professor, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Mr. Naved Ahmad", designation: "Assistant Professor, SCSE", affiliation: "IILM University, Gurugram" },
     ],
   },
   {
     role: "Delegate & Sponsorship Chair(s)",
     members: [
-      { name: "Dr. Vaishali Maheshwari", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Sonam Lata", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Vaishali Maheshwari", designation: "Associate Professor & Head, Industry Connect, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Sonam Lata", designation: "Assistant Professor, SCSE", affiliation: "IILM University, Gurugram" },
     ],
   },
   {
     role: "Publicity & Media Chair(s)",
     members: [
-      { name: "Ms. Anshita Shukla", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Puneet Bawa", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Ms. Anshita Shukla", designation: "Assistant Professor, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Puneet Bawa", designation: "Assistant Professor, SCSE", affiliation: "IILM University, Gurugram" },
     ],
   },
   {
     role: "Finance & Accounts Chair(s)",
     members: [
-      { name: "Dr. Aarti Chugh", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Aarti Chugh", designation: "Associate Professor, SCSE", affiliation: "IILM University, Gurugram" },
     ],
   },
   {
     role: "Registration Chair(s)",
     members: [
-      { name: "Dr. Megha Rana", designation: "Faculty", affiliation: "Amity University, Haryana" },
-      { name: "Dr. Samridhi Singhal", designation: "Faculty, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Megha Rana", designation: "Associate Professor, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Ms. Samridhi Singhal", designation: "Assistant Professor, SCSE", affiliation: "IILM University, Gurugram" },
     ],
   },
   {
     role: "Hospitality & Accommodation Chair(s)",
     members: [
-      { name: "Mr. Shagun Panghal", designation: "Staff, SCSE", affiliation: "IILM University, Gurugram" },
-      { name: "Mr. Abhishek Toofani", designation: "Staff, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Shagun Panghal", designation: "Assistant Professor, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Mr. Abhishek Toofani", designation: "Assistant Professor, SCSE", affiliation: "IILM University, Gurugram" },
     ],
   },
   {
     role: "Technical Program Committee",
     members: [
-      { name: "Dr. Law Kumar Singh", designation: "Chair", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Pallavi Pandey", designation: "Co-Chair", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Jayati Tripathi", designation: "Member", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Pooja Batra Nagpal", designation: "Member", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Preeti Mehta", designation: "Member", affiliation: "IILM University, Gurugram" },
-      { name: "Dr. Vikas Jayasawal", designation: "Member", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Law Kumar Singh", designation: "Professor, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Pallavi Pandey", designation: "Associate Professor, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Jayati Tripathi", designation: "Assistant Professor, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Pooja Batra Nagpal", designation: "Associate Professor, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Preeti Mehta", designation: "Assistant Professor, SCSE", affiliation: "IILM University, Gurugram" },
+      { name: "Dr. Vikas Kumar Jayasawal", designation: "Assistant Professor, SCSE", affiliation: "IILM University, Gurugram" },
     ],
   },
   {
     role: "Student Coordinators",
     members: [
-      { name: "Rudraksh", designation: "B.Tech 2nd Year", affiliation: "IILM University, Gurugram" },
-      { name: "Devansh", designation: "B.Tech 2nd Year", affiliation: "IILM University, Gurugram" },
+      { name: "Rudraksh Sachdeva", designation: "B.Tech 2nd Year", affiliation: "IILM University, Gurugram" },
+      { name: "Devansh Datta", designation: "B.Tech 2nd Year", affiliation: "IILM University, Gurugram" },
     ],
   },
 ];
@@ -149,7 +149,6 @@ const Organizers = () => {
           >
             {/* Role Title */}
             <div className={styles.roleHeader}>
-              <span className={styles.roleNumber}>{String(gi + 1).padStart(2, "0")}</span>
               <h3 className={styles.roleTitle}>{group.role}</h3>
             </div>
 
@@ -157,20 +156,6 @@ const Organizers = () => {
             <div className={styles.membersGrid}>
               {group.members.map((m, mi) => (
                 <div key={mi} className={styles.memberCard}>
-                  {/* Initials Avatar */}
-                  <div className={styles.avatar}>
-                    <span>
-                      {m.name
-                        .replace(/^(Prof\.\s*\(Dr\.\)\s*|Dr\.\s*|Mr\.\s*|Ms\.\s*)/i, "")
-                        .split(" ")
-                        .filter(Boolean)
-                        .map((w) => w[0])
-                        .slice(0, 2)
-                        .join("")
-                        .toUpperCase()}
-                    </span>
-                  </div>
-
                   <div className={styles.memberInfo}>
                     <span className={styles.memberName}>{m.name}</span>
                     <span className={styles.memberDesig}>{m.designation}</span>
