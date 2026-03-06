@@ -286,34 +286,39 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Event details */}
-        <div className={styles.eventDetails}>
-          <div className={styles.detailItem}>
-            <div className={styles.iconCircle}>
-              <svg viewBox="0 0 24 24" fill="none" className={styles.detailIcon}>
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor" opacity="0.2" />
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" strokeWidth="1.5" />
-                <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5" />
-              </svg>
-            </div>
-            <div className={styles.detailText}>
-              <span className={styles.detailLabel}>Venue</span>
-              <span className={styles.detailValue}>IILM University, Gurugram</span>
-            </div>
+        {/* Event Ticket */}
+        <div className={styles.eventTicket}>
+          {/* Glowing animated border element */}
+          <div className={styles.ticketBorder} />
+
+          {/* Left Side: Date */}
+          <div className={styles.ticketDateSection}>
+            <div className={styles.ticketMonth}>April 2026</div>
+            <div className={styles.ticketDays}>29&ndash;30</div>
+            <div className={styles.ticketSubtitle}>Two-Day Symposium</div>
           </div>
-          <div className={styles.detailItem}>
-            <div className={styles.iconCircle}>
-              <svg viewBox="0 0 24 24" fill="none" className={styles.detailIcon}>
-                <rect x="3" y="4" width="18" height="18" rx="3" fill="currentColor" opacity="0.2" />
-                <rect x="3" y="4" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M3 10h18" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M8 2v4M16 2v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                <circle cx="12" cy="16" r="1.5" fill="currentColor" />
-              </svg>
-            </div>
-            <div className={styles.detailText}>
-              <span className={styles.detailLabel}>Date</span>
-              <span className={styles.detailValue}>29th April 2026</span>
+
+          <div className={styles.ticketDivider}>
+            <div className={styles.cutoutTop}></div>
+            <div className={styles.dashLine}></div>
+            <div className={styles.cutoutBottom}></div>
+          </div>
+
+          {/* Right Side: Venue & Details */}
+          <div className={styles.ticketVenueSection}>
+            <div className={styles.venueItem}>
+              <div className={styles.venueIconWrapper}>
+                <svg viewBox="0 0 24 24" fill="none" className={styles.venueIcon}>
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor" opacity="0.2" />
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" strokeWidth="1.5" />
+                  <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+                </svg>
+              </div>
+              <div className={styles.venueText}>
+                <span className={styles.venueLabel}>Location</span>
+                <span className={styles.venueValue}>SCSE, IILM University</span>
+                <span className={styles.venueSub}>Gurugram, India</span>
+              </div>
             </div>
           </div>
         </div>
