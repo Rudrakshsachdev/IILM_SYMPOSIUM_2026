@@ -46,7 +46,7 @@ const VenueContact = () => {
             <span className={styles.gradientText}>Location</span>
           </h2>
           <p className={styles.subtitle}>
-            Join us at IILM University, Gurugram for the International
+            Join us at SCSE, IILM University, Gurugram for the International
             Symposium 2026
           </p>
         </div>
@@ -120,14 +120,14 @@ const VenueContact = () => {
               <div className={styles.contactList}>
                 <div className={styles.contactItem}>
                   <span className={styles.contactLabel}>Email</span>
-                  <a href="mailto:symposium@iilm.edu" className={styles.contactValue}>
-                    symposium@iilm.edu
+                  <a href="mailto:iilmsymposium.ggn@iilm.edu" className={styles.contactValue}>
+                    iilmsymposium.ggn@iilm.edu
                   </a>
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactLabel}>Website</span>
-                  <a href="https://iilm.edu" target="_blank" rel="noopener noreferrer" className={styles.contactValue}>
-                    iilm.edu
+                  <a href="https://iilm.edu.in/" target="_blank" rel="noopener noreferrer" className={styles.contactValue}>
+                    https://iilm.edu.in/
                   </a>
                 </div>
               </div>
