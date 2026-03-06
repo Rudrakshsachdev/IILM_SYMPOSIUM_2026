@@ -3,6 +3,7 @@ import styles from "./Hero.module.css";
 import collab1 from "../../assets/collab1.png";
 import collab2 from "../../assets/collab2.jpg";
 import collab3 from "../../assets/collab3.png";
+import ieeeLogo from "../../assets/ieee-logo.png";
 
 // Symposium-themed wave colors (navy blues + accent red tones)
 const WAVE_COLORS = ["#c41e3a", "#1a3a6b", "#0d4f8b", "#8b1a30", "#163860"];
@@ -214,10 +215,19 @@ const Hero = () => {
 
       {/* === Content === */}
       <div className={styles.heroContent}>
-        {/* Badge */}
-        <div className={styles.badge}>
-          <span className={styles.badgeDot}></span>
-          <span>International Symposium 2026</span>
+        {/* Badges */}
+        <div className={styles.badgesWrapper}>
+          {/* Main Event Badge */}
+          <div className={styles.badge}>
+            <span className={styles.badgeDot}></span>
+            <span>International Symposium 2026</span>
+          </div>
+
+          {/* IEEE Tech Sponsor Badge */}
+          <div className={styles.sponsorBadge}>
+            <span className={styles.sponsorText}>Technical Co-Sponsor</span>
+            <img src={ieeeLogo} alt="IEEE" className={styles.ieeeLogo} />
+          </div>
         </div>
 
         {/* Joint Organizer */}
