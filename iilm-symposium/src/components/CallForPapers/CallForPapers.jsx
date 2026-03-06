@@ -12,10 +12,9 @@ const tracksPreview = [
 
 /* ─── Important Dates ─── */
 const datesData = [
-  { icon: "📝", label: "Abstract Submission", date: "30 June 2026", status: "upcoming" },
-  { icon: "📄", label: "Full Paper Deadline", date: "15 July 2026", status: "upcoming" },
-  { icon: "✅", label: "Acceptance Notice", date: "10 Aug 2026", status: "upcoming" },
-  { icon: "🎓", label: "Symposium Day", date: "29th April 2026", status: "highlight" },
+  { icon: "📄", label: "Full Paper Deadline", date: "5th April 2026", status: "upcoming" },
+  { icon: "✅", label: "Acceptance Notice", date: "15th April 2026", status: "upcoming" },
+  { icon: "🎓", label: "Symposium Day", date: "29–30 April 2026", status: "highlight" },
 ];
 
 /* ─── Submission Guidelines ─── */
@@ -91,7 +90,7 @@ const CallForPapers = () => {
             <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" />
             <path d="M7 10l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          Research Tracks
+          Research Themes
         </div>
         <div className={styles.tracksGrid}>
           {tracksPreview.map((track, i) => (
@@ -107,7 +106,7 @@ const CallForPapers = () => {
                 <span className={styles.trackEmoji}>{track.icon}</span>
               </div>
               <div className={styles.trackInfo}>
-                <span className={styles.trackNum}>Track {String(track.id).padStart(2, "0")}</span>
+                <span className={styles.trackNum}>Theme {String(track.id).padStart(2, "0")}</span>
                 <h4 className={styles.trackTitle}>{track.title}</h4>
               </div>
               <svg className={styles.trackArrow} viewBox="0 0 24 24" fill="none">

@@ -550,8 +550,8 @@
 
 .datesGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
 }
 
 .dateCard {
@@ -774,6 +774,9 @@
   .infoGrid { grid-template-columns: 1fr; gap: 1.25rem; }
   .header { margin-bottom: 4rem; }
   .datesGrid { grid-template-columns: repeat(2, 1fr); }
+  .datesGrid > div:nth-child(3) {
+    grid-column: span 2;
+  }
 }
 
 @media (max-width: 768px) {
@@ -781,7 +784,10 @@
 
   .tracksGrid { grid-template-columns: 1fr; gap: 0.75rem; }
 
-  .datesGrid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .datesGrid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .datesGrid > div:nth-child(3) {
+    grid-column: span 1;
+  }
   .dateCard { padding: 1.5rem 1rem; }
 
   .infoCard { padding: 2rem 1.5rem; border-radius: 20px; }
