@@ -24,7 +24,7 @@ const Footer = () => {
             <h4>Quick Links</h4>
             <ul>
               <li><a href="#about">About</a></li>
-              <li><a href="#speakers">Speakers</a></li>
+              <li><a href="#tracks">Themes</a></li>
               <li><a href="#papers">Call for Papers</a></li>
               <li><a href="#registration">Registration</a></li>
             </ul>
@@ -33,8 +33,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div className={styles.contactSection}>
             <h4>Contact</h4>
-            <p>Email: symposium@iilm.edu</p>
-            <p>Phone: +91 98765 43210</p>
+            <p>Email: iilmsymposium.ggn@iilm.edu</p>
             <p>Gurugram, Haryana, India</p>
           </div>
 
@@ -46,7 +45,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className={styles.bottomSection}>
           <p>
-            © 2026 IILM University. All Rights Reserved.
+            © 2026 International Symposium. All Rights Reserved.
           </p>
           <p>
             Designed & Developed by Rudraksh
