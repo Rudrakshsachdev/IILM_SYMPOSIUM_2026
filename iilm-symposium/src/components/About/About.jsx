@@ -36,22 +36,22 @@ const committeeData = [
     ],
   },
   {
-    institution: "Örebro University, Sweden",
-    flag: "🇸🇪",
-    members: [
-      {
-        name: "Prof. Shang Gao",
-        role: "Associate Professor in Informatics",
-      },
-    ],
-  },
-  {
     institution: "Oxford Brookes University, United Kingdom",
     flag: "🇬🇧",
     members: [
       {
         name: "Dr. Aydin Azizi",
         role: "Senior Lecturer, School of Engineering, Computing and Mathematics",
+      },
+    ],
+  },
+  {
+    institution: "Örebro University, Sweden",
+    flag: "🇸🇪",
+    members: [
+      {
+        name: "Prof. Shang Gao",
+        role: "Associate Professor in Informatics",
       },
     ],
   },
