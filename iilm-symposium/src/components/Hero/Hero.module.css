@@ -742,7 +742,7 @@
   }
 
   .ticketDateSection {
-    padding: 1.5rem;
+    padding: 1.25rem 1.5rem;
     border-bottom: none;
   }
 
@@ -778,14 +778,37 @@
   }
 
   .ticketVenueSection {
-    padding: 1.5rem;
+    flex: none;
+    padding: 1rem 1.5rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .venueIconWrapper {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 10px;
+  }
+
+  .venueIcon {
+    width: 20px;
+    height: 20px;
   }
 
   .venueItem {
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.4rem;
+  }
+
+  .venueValue {
+    font-size: 1rem;
+  }
+
+  .venueSub {
+    font-size: 0.8rem;
   }
 
   .venueText {
