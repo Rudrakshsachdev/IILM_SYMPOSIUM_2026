@@ -8,9 +8,9 @@ const tracksData = [
         color: "#00C2FF",
         icon: "🧠",
         title: "Artificial Intelligence, Machine Learning & Intelligent Systems",
-        tag: "AI-Focused Track",
+        tag: "AI-Focused Theme",
         description:
-            "This track brings together researchers, students, and practitioners working on the latest advancements in AI and ML. It aims to explore intelligent solutions across domains and promote interdisciplinary applications of AI.",
+            "This theme brings together researchers, students, and practitioners working on the latest advancements in AI and ML. It aims to explore intelligent solutions across domains and promote interdisciplinary applications of AI.",
         subThemes: [
             "Deep Learning Architectures (CNN, RNN, Transformers)",
             "Generative AI, LLMs, and Foundation Models",
@@ -32,9 +32,9 @@ const tracksData = [
         color: "#7C4DFF",
         icon: "📊",
         title: "Information Systems, Data Analytics & Digital Transformation",
-        tag: "Information Systems Track",
+        tag: "Information Systems Theme",
         description:
-            "This track focuses on the design, development, and application of information systems to support decision-making, digital governance, and enterprise solutions. It emphasizes transforming organizations through data-driven strategies.",
+            "This theme focuses on the design, development, and application of information systems to support decision-making, digital governance, and enterprise solutions. It emphasizes transforming organizations through data-driven strategies.",
         subThemes: [
             "Information System Design & Enterprise Architecture",
             "Cloud Computing, Serverless Computing & Distributed IS",
@@ -56,9 +56,9 @@ const tracksData = [
         color: "#FF6B6B",
         icon: "🔗",
         title: "Complex Systems, Adaptive Computing & System-of-Systems Engineering",
-        tag: "Complex Systems–Focused Track",
+        tag: "Complex Systems–Focused Theme",
         description:
-            "This track focuses on the theory, modeling, analysis, and application of complex systems arising from the interaction of multiple intelligent, adaptive, and interconnected components. It addresses computational, mathematical, and system-level approaches for understanding emergent behavior, non-linearity, scalability, and self-organization.",
+            "This theme focuses on the theory, modeling, analysis, and application of complex systems arising from the interaction of multiple intelligent, adaptive, and interconnected components. It addresses computational, mathematical, and system-level approaches for understanding emergent behavior, non-linearity, scalability, and self-organization.",
         subThemes: [
             "Foundations of Complex Systems and Systems Thinking",
             "Modeling and Simulation of Complex Adaptive Systems",
@@ -81,9 +81,9 @@ const tracksData = [
         color: "#00E676",
         icon: "🚀",
         title: "Emerging Technologies, Innovation, and Cross-Disciplinary Applications",
-        tag: "Open, Flexible Track for Diverse Participation",
+        tag: "Open, Flexible Theme for Diverse Participation",
         description:
-            "This track offers space for futuristic and interdisciplinary topics, encouraging exploration of cutting-edge technologies and their impact on society, industry, and global development.",
+            "This theme offers space for futuristic and interdisciplinary topics, encouraging exploration of cutting-edge technologies and their impact on society, industry, and global development.",
         subThemes: [
             "Automation, Robotics, and Autonomous Systems",
             "Digital Twin Technology & Simulation Modelling",
@@ -105,9 +105,9 @@ const tracksData = [
         color: "#FFB300",
         icon: "💼",
         title: "Applied Digital Transformation, Business Innovation & Technology-Driven Services",
-        tag: "Transformation, Business Tech & Socio-Technical Systems Track",
+        tag: "Transformation, Business Tech & Socio-Technical Systems Theme",
         description:
-            "This track explores how digital technologies transform industries, business models, and public services, bridging industry needs and academic research in the digital economy.",
+            "This theme explores how digital technologies transform industries, business models, and public services, bridging industry needs and academic research in the digital economy.",
         subThemes: [
             "Digital Transformation in Industry, Education, Public Sector",
             "Smart Logistics & Supply Chain Digitization",
@@ -250,13 +250,13 @@ const Tracks = () => {
             <div className={styles.container}>
                 {/* Header */}
                 <div className={`${styles.header} ${isVisible ? styles.animate : ""}`}>
-                    <span className={styles.eyebrow}>Research Tracks</span>
+                    <span className={styles.eyebrow}>Research Themes</span>
                     <h2 className={styles.heading}>
                         Symposium{" "}
-                        <span className={styles.gradientText}>Tracks</span>
+                        <span className={styles.gradientText}>Themes</span>
                     </h2>
                     <p className={styles.subtitle}>
-                        Five focused research tracks spanning AI & intelligent systems,
+                        Five focused research themes spanning AI & intelligent systems,
                         information systems, complex systems engineering, emerging
                         technologies, and digital transformation.
                     </p>
