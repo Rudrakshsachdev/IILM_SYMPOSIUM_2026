@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./ContactUs.module.css";
 
-const WHATSAPP_NUMBER = "919876543210"; // ← Replace with actual WhatsApp number (country code + number, no + or spaces)
 
 const ContactUs = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -32,18 +31,10 @@ const ContactUs = () => {
         const subject = document.getElementById("contact-subject").value.trim();
         const message = document.getElementById("contact-message").value.trim();
 
-        const text = [
-            `*New Inquiry — IILM Symposium 2026*`,
-            ``,
-            `*Name:* ${name}`,
-            `*Email:* ${email}`,
-            subject ? `*Subject:* ${subject}` : null,
-            ``,
-            `*Message:*`,
-            message,
-        ].filter(Boolean).join("%0A");
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        const mailtoLink = `mailto:iilmsymposium.ggn@iilm.edu?subject=${encodeURIComponent(subject || "New Inquiry — IILM Symposium 2026")}&body=${encodeURIComponent(body)}`;
 
-        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
+        window.location.href = mailtoLink;
     };
 
     return (
@@ -85,26 +76,11 @@ const ContactUs = () => {
                         </div>
                         <h3 className={styles.cardTitle}>Email</h3>
                         <p className={styles.cardText}>For general inquiries and paper submissions</p>
-                        <a href="mailto:symposium@iilm.edu" className={styles.cardLink}>
-                            symposium@iilm.edu
+                        <a href="mailto: iilmsymposium.ggn@iilm.edu" className={styles.cardLink}>
+                            iilmsymposium.ggn@iilm.edu
                         </a>
                     </div>
 
-                    {/* Phone Card */}
-                    <div className={`${styles.contactCard} ${a}`} style={{ "--index": 1 }}>
-                        <div className={styles.cardShine} />
-                        <div className={styles.cardAccent} />
-                        <div className={styles.cardIconWrap}>
-                            <svg className={styles.cardIcon} viewBox="0 0 24 24" fill="none">
-                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" strokeWidth="1.5" />
-                            </svg>
-                        </div>
-                        <h3 className={styles.cardTitle}>Phone</h3>
-                        <p className={styles.cardText}>Available Monday to Friday, 9 AM – 5 PM IST</p>
-                        <a href="tel:+919876543210" className={styles.cardLink}>
-                            +91 98765 43210
-                        </a>
-                    </div>
 
                     {/* Location Card */}
                     <div className={`${styles.contactCard} ${a}`} style={{ "--index": 2 }}>
