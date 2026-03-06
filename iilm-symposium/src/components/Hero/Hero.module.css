@@ -242,6 +242,14 @@
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.highlightFrontiers {
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
 }
 
 .gradientText {

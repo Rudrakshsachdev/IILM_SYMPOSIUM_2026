@@ -235,7 +235,10 @@ const Hero = () => {
         </div>
 
         <h1 className={styles.title}>
-          <span className={styles.titlePrefix}>International Symposium on</span>
+          <span className={styles.titlePrefix}>
+            International Symposium on{" "}
+            <span className={styles.highlightFrontiers}>AI Frontiers 2.0 &ndash;</span>
+          </span>
           <span className={styles.gradientText}>
             Emerging Research in Advanced Technologies
           </span>
