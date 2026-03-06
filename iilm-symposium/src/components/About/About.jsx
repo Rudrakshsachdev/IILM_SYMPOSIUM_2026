@@ -113,7 +113,7 @@ const About = () => {
           <h3 className={styles.contentTitle}>Introduction</h3>
           <p className={styles.contentText}>
             This International Online Symposium is a joint initiative between{" "}
-            <strong>IILM University, India</strong>, the{" "}
+            <strong>SCSE, IILM University, India</strong>, the{" "}
             <strong>Polytechnic University of Viana do Castelo (IPVC), Portugal</strong>,{" "}
             <strong>Örebro University, Sweden</strong>, and{" "}
             <strong>Oxford Brookes University, United Kingdom</strong>. The aim is to
