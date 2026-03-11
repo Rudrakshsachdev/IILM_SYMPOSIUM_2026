@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Tracks.module.css";
 
 /* ─── Track Data ─── */
@@ -138,7 +139,7 @@ const NetworkCanvas = () => {
         const ctx = canvas.getContext("2d");
         let animId;
         let nodes = [];
-        const NODE_COUNT = 60;
+        const NODE_COUNT = 40;
 
         const resize = () => {
             canvas.width = canvas.offsetWidth * window.devicePixelRatio;
@@ -310,72 +311,80 @@ const Tracks = () => {
                                 </button>
 
                                 {/* Expandable Body */}
-                                <div
-                                    className={`${styles.trackBody} ${isOpen ? styles.bodyOpen : ""}`}
-                                >
-                                    <div className={styles.bodyInner}>
-                                        <p className={styles.trackDesc}>{track.description}</p>
+                                <AnimatePresence>
+                                    {isOpen && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                            className={styles.trackBody}
+                                        >
+                                            <div className={styles.bodyInner}>
+                                                <p className={styles.trackDesc}>{track.description}</p>
 
-                                        <div className={styles.bodyColumns}>
-                                            {/* Sub-Themes */}
-                                            <div className={styles.bodyColumn}>
-                                                <h4 className={styles.bodyColumnTitle}>
-                                                    <svg viewBox="0 0 20 20" className={styles.columnIcon}>
-                                                        <circle
-                                                            cx="10"
-                                                            cy="10"
-                                                            r="8"
-                                                            stroke="currentColor"
-                                                            strokeWidth="1.5"
-                                                            fill="none"
-                                                        />
-                                                        <path
-                                                            d="M10 6v4l3 2"
-                                                            stroke="currentColor"
-                                                            strokeWidth="1.5"
-                                                            strokeLinecap="round"
-                                                            fill="none"
-                                                        />
-                                                    </svg>
-                                                    Sub-Themes
-                                                </h4>
-                                                <ul className={styles.themeList}>
-                                                    {track.subThemes.map((t, i) => (
-                                                        <li key={i} className={styles.themeItem}>
-                                                            <span className={styles.themeDot} />
-                                                            {t}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
+                                                <div className={styles.bodyColumns}>
+                                                    {/* Sub-Themes */}
+                                                    <div className={styles.bodyColumn}>
+                                                        <h4 className={styles.bodyColumnTitle}>
+                                                            <svg viewBox="0 0 20 20" className={styles.columnIcon}>
+                                                                <circle
+                                                                    cx="10"
+                                                                    cy="10"
+                                                                    r="8"
+                                                                    stroke="currentColor"
+                                                                    strokeWidth="1.5"
+                                                                    fill="none"
+                                                                />
+                                                                <path
+                                                                    d="M10 6v4l3 2"
+                                                                    stroke="currentColor"
+                                                                    strokeWidth="1.5"
+                                                                    strokeLinecap="round"
+                                                                    fill="none"
+                                                                />
+                                                            </svg>
+                                                            Sub-Themes
+                                                        </h4>
+                                                        <ul className={styles.themeList}>
+                                                            {track.subThemes.map((t, i) => (
+                                                                <li key={i} className={styles.themeItem}>
+                                                                    <span className={styles.themeDot} />
+                                                                    {t}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
 
-                                            {/* Expected Outcomes */}
-                                            <div className={styles.bodyColumn}>
-                                                <h4 className={styles.bodyColumnTitle}>
-                                                    <svg viewBox="0 0 20 20" className={styles.columnIcon}>
-                                                        <path
-                                                            d="M16 6L8.5 14 4 9.5"
-                                                            stroke="currentColor"
-                                                            strokeWidth="1.8"
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            fill="none"
-                                                        />
-                                                    </svg>
-                                                    Expected Outcomes
-                                                </h4>
-                                                <ul className={styles.outcomeList}>
-                                                    {track.outcomes.map((o, i) => (
-                                                        <li key={i} className={styles.outcomeItem}>
-                                                            <span className={styles.outcomeBullet}>→</span>
-                                                            {o}
-                                                        </li>
-                                                    ))}
-                                                </ul>
+                                                    {/* Expected Outcomes */}
+                                                    <div className={styles.bodyColumn}>
+                                                        <h4 className={styles.bodyColumnTitle}>
+                                                            <svg viewBox="0 0 20 20" className={styles.columnIcon}>
+                                                                <path
+                                                                    d="M16 6L8.5 14 4 9.5"
+                                                                    stroke="currentColor"
+                                                                    strokeWidth="1.8"
+                                                                    strokeLinecap="round"
+                                                                    strokeLinejoin="round"
+                                                                    fill="none"
+                                                                />
+                                                            </svg>
+                                                            Expected Outcomes
+                                                        </h4>
+                                                        <ul className={styles.outcomeList}>
+                                                            {track.outcomes.map((o, i) => (
+                                                                <li key={i} className={styles.outcomeItem}>
+                                                                    <span className={styles.outcomeBullet}>→</span>
+                                                                    {o}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </div>
                         );
                     })}
